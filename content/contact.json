@@ -1,0 +1,32 @@
+{
+  "$schema": "./schemas/contact.schema.json",
+  "links": [
+    {
+      "kind": "email",
+      "label": "Email",
+      "value": "pradoshlenka9@gmail.com",
+      "href": "mailto:pradoshlenka9@gmail.com"
+    },
+    {
+      "kind": "phone",
+      "label": "Phone",
+      "value": "+91 89191 86863",
+      "href": "tel:+918919186863"
+    },
+    {
+      "kind": "linkedin",
+      "label": "LinkedIn",
+      "value": "in/pradosh-kumar-lenka-393b6b290",
+      "href": "https://www.linkedin.com/in/pradosh-kumar-lenka-393b6b290"
+    }
+  ],
+  "headshot": "/photos/headshot.webp",
+  "location": "Hyderabad, India",
+  "headshotAlt": "Formal portrait of Pradosh Kumar Lenka in a dark suit and tie",
+  "labels": {
+    "copy": "Copy",
+    "copied": "Email copied",
+    "copyFailed": "Couldn't copy — please select the address instead",
+    "opensInNewTab": "(opens in a new tab)"
+  }
+}

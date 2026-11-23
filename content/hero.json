@@ -1,0 +1,39 @@
+{
+  "$schema": "./schemas/hero.schema.json",
+  "person": {
+    "name": "Pradosh Kumar Lenka",
+    "firstNames": "Pradosh Kumar",
+    "highlightedName": "Lenka",
+    "monogram": "PKL",
+    "pronouns": "he/him",
+    "location": "Hyderabad, India",
+    "origin": "Born in Odisha, raised in Telangana",
+    "status": "PGDM (Finance) student, Batch 2025–2027, currently in Trimester IV",
+    "statusLine": "Deloitte USI · Pre-Placement Offer holder",
+    "tagline": "Finance · Structured Credit · Research",
+    "brandLine": "I turn messy financial data into decisions people can trust.",
+    "availability": "Based in Hyderabad · Open to roles in finance, research & consulting"
+  },
+  "buttons": {
+    "primary": "View My Work",
+    "secondary": "Download Résumé",
+    "resumePendingNote": "Résumé PDF coming soon"
+  },
+  "portrait": {
+    "image": "/photos/headshot.webp",
+    "alt": "Portrait of Pradosh Kumar Lenka",
+    "backdropColor": "#8b868a"
+  },
+  "introVideo": {
+    "src": "/videos/pradosh-introduction.mp4",
+    "poster": "/videos/pradosh-introduction-poster.jpg",
+    "backdrop": "/videos/pradosh-introduction-backdrop.jpg",
+    "orientation": "portrait",
+    "captions": null,
+    "duration": "1:08",
+    "watchLabel": "Watch introduction",
+    "playLabel": "Play the introduction video",
+    "description": "A one-minute introduction — who I am, how I work, and what I'm building toward.",
+    "missing": "The introduction video is on its way — place it at public/videos/pradosh-introduction.mp4."
+  }
+}

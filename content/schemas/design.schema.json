@@ -1,0 +1,114 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "type": "object",
+  "properties": {
+    "$schema": {
+      "type": "string",
+      "description": "Editor helper that powers hints and error checking. Leave it as it is."
+    },
+    "colors": {
+      "type": "object",
+      "properties": {
+        "violet": {
+          "type": "string",
+          "description": "Primary accent: buttons, links, highlights (hex, e.g. \"#a56bff\").",
+          "pattern": "^#[0-9a-fA-F]{6}$"
+        },
+        "lavender": {
+          "type": "string",
+          "description": "Soft accent: highlighted words, labels (hex).",
+          "pattern": "^#[0-9a-fA-F]{6}$"
+        },
+        "onViolet": {
+          "type": "string",
+          "description": "Text placed on accent-coloured buttons (hex).",
+          "pattern": "^#[0-9a-fA-F]{6}$"
+        },
+        "fg": {
+          "type": "string",
+          "description": "Main text (hex).",
+          "pattern": "^#[0-9a-fA-F]{6}$"
+        },
+        "fgMuted": {
+          "type": "string",
+          "description": "Secondary text (hex).",
+          "pattern": "^#[0-9a-fA-F]{6}$"
+        },
+        "fgSubtle": {
+          "type": "string",
+          "description": "Captions and small print (hex).",
+          "pattern": "^#[0-9a-fA-F]{6}$"
+        },
+        "surface": {
+          "type": "string",
+          "description": "Cards and menus (hex).",
+          "pattern": "^#[0-9a-fA-F]{6}$"
+        },
+        "surface2": {
+          "type": "string",
+          "description": "Hovered cards (hex).",
+          "pattern": "^#[0-9a-fA-F]{6}$"
+        },
+        "positive": {
+          "type": "string",
+          "description": "Gains and \"available\" status (hex).",
+          "pattern": "^#[0-9a-fA-F]{6}$"
+        },
+        "negative": {
+          "type": "string",
+          "description": "Losses and stress shading (hex).",
+          "pattern": "^#[0-9a-fA-F]{6}$"
+        }
+      },
+      "required": [
+        "violet",
+        "lavender",
+        "onViolet",
+        "fg",
+        "fgMuted",
+        "fgSubtle",
+        "surface",
+        "surface2",
+        "positive",
+        "negative"
+      ],
+      "additionalProperties": false
+    },
+    "radii": {
+      "type": "object",
+      "properties": {
+        "control": {
+          "type": "number",
+          "description": "Inputs and small controls (px).",
+          "minimum": 0,
+          "maximum": 24
+        },
+        "card": {
+          "type": "number",
+          "description": "Cards (px).",
+          "minimum": 0,
+          "maximum": 40
+        },
+        "panel": {
+          "type": "number",
+          "description": "Large panels (px).",
+          "minimum": 0,
+          "maximum": 48
+        }
+      },
+      "required": [
+        "control",
+        "card",
+        "panel"
+      ],
+      "additionalProperties": false
+    }
+  },
+  "required": [
+    "colors",
+    "radii"
+  ],
+  "additionalProperties": false,
+  "description": "content/design.json — the theme's colours and corner rounding (dark theme only). Text colours are checked for readability against the page background. The page background itself is the cosmic scene and is not set here.",
+  "definitions": {}
+}

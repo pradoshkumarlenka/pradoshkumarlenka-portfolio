@@ -1,0 +1,113 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "type": "object",
+  "properties": {
+    "label": {
+      "type": "string"
+    },
+    "file": {
+      "type": "string",
+      "description": "Path relative to /public."
+    },
+    "downloadName": {
+      "type": "string",
+      "description": "Name the browser saves the file as."
+    },
+    "$schema": {
+      "type": "string",
+      "description": "Editor helper that powers hints and error checking. Leave it as it is."
+    },
+    "description": {
+      "type": "string",
+      "description": "One line describing the document."
+    },
+    "variants": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "description": "Short stable id, e.g. \"master\", \"research\"."
+          },
+          "label": {
+            "type": "string",
+            "description": "Selector label, e.g. \"Investment Banking\"."
+          },
+          "file": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "description": "PDF path inside /public (or a media-library /media/… path), or null while the real PDF is not ready."
+          },
+          "downloadName": {
+            "type": "string",
+            "description": "Name the browser saves the file as, e.g. \"Pradosh_Kumar_Lenka_Resume_Research.pdf\"."
+          },
+          "description": {
+            "type": "string",
+            "description": "One line describing this version (leave out until the real PDF exists)."
+          }
+        },
+        "required": [
+          "id",
+          "label",
+          "file",
+          "downloadName"
+        ],
+        "additionalProperties": false,
+        "description": "One role-specific résumé in the Résumé Library selector."
+      },
+      "description": "Role-specific versions shown as a selector (optional). Leave out to show only the Master Résumé above. Versions whose file is null are listed as \"awaiting the PDF\"."
+    },
+    "labels": {
+      "type": "object",
+      "properties": {
+        "download": {
+          "type": "string"
+        },
+        "open": {
+          "type": "string"
+        },
+        "meta": {
+          "type": "string",
+          "description": "\"PDF · {size}\""
+        },
+        "missing": {
+          "type": "string",
+          "description": "Shown if the PDF file is missing."
+        },
+        "choose": {
+          "type": "string",
+          "description": "Selector heading, e.g. \"Choose the résumé for your role\"."
+        },
+        "awaiting": {
+          "type": "string",
+          "description": "Shown for a version whose PDF is not ready yet. \"{role}\" is replaced."
+        },
+        "useMaster": {
+          "type": "string",
+          "description": "Button that switches to the Master Résumé from an awaiting version."
+        }
+      },
+      "required": [
+        "download",
+        "open",
+        "meta",
+        "missing"
+      ],
+      "additionalProperties": false,
+      "description": "Words used in the Résumé Library."
+    }
+  },
+  "required": [
+    "description",
+    "downloadName",
+    "file",
+    "label",
+    "labels"
+  ],
+  "additionalProperties": false,
+  "definitions": {}
+}

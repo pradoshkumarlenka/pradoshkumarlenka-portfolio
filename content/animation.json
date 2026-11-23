@@ -1,0 +1,65 @@
+{
+  "$schema": "./schemas/animation.schema.json",
+  "global": {
+    "smoothScrollLerp": 0.1
+  },
+  "reveal": {
+    "base": {
+      "distance": 48,
+      "duration": 0.9,
+      "blur": 6,
+      "threshold": 0.12,
+      "ease": "premium"
+    },
+    "section": {
+      "distance": 16,
+      "duration": 0.6,
+      "blur": 0,
+      "stagger": 0.08
+    }
+  },
+  "hero": {
+    "nameIntroSeconds": 1.2,
+    "portraitEntranceMs": 1200
+  },
+  "cursorTrail": {
+    "enabled": true,
+    "startAfterMs": 2000,
+    "color": "#a56bff",
+    "secondaryColor": "#6f5bd6",
+    "intensity": 0.9,
+    "trailWidth": 2.5,
+    "linger": 1.1,
+    "glow": 0.7,
+    "hotspot": 0.45,
+    "followSpeed": 0.6,
+    "clickBurst": true
+  },
+  "proofBar": {
+    "rollSeconds": 1.15
+  },
+  "honoursCarousel": {
+    "stepPx": 170,
+    "halfHeightPx": 200
+  },
+  "certificateWall": {
+    "filterFadeMs": 140
+  },
+  "beyondCarousel": {
+    "stepPx": 160,
+    "stageHeightPx": 600,
+    "gap": 18,
+    "radius": 14,
+    "dispersion": 0.25,
+    "squeeze": 0.15,
+    "desktop": {
+      "preset": "liquid",
+      "cardHeight": 0.52
+    },
+    "mobile": {
+      "preset": "ribbon",
+      "cardHeight": 0.42,
+      "bend": 0.16
+    }
+  }
+}

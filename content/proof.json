@@ -1,0 +1,33 @@
+{
+  "$schema": "./schemas/proof.schema.json",
+  "items": [
+    {
+      "value": "PPO",
+      "label": "Pre-Placement Offer",
+      "detail": "Deloitte USI, after the 2026 summer internship."
+    },
+    {
+      "value": "Only 2",
+      "label": "Financial Services Group, Deloitte",
+      "detail": "Only two selected from the entire India-wide Tax intern batch. I was one — working on structured finance and securitization."
+    },
+    {
+      "value": "#4",
+      "label": "Rank, PGDM TPS batch",
+      "detail": "Held across Trimester I and Trimester II."
+    },
+    {
+      "value": "22 of 216",
+      "label": "Selected as Toastmaster",
+      "detail": "Led a full team of ten through the programme; every member went on to secure an internship.",
+      "count": {
+        "to": 22,
+        "suffix": " of 216"
+      },
+      "dots": {
+        "total": 216,
+        "lit": 22
+      }
+    }
+  ]
+}

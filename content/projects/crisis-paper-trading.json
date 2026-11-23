@@ -1,0 +1,68 @@
+{
+  "$schema": "../schemas/project.schema.json",
+  "order": 4,
+  "slug": "crisis-paper-trading",
+  "title": "Crisis Paper-Trading Portfolio",
+  "image": "/images/portfolio/04-crisis-paper-trading.png",
+  "imageAlt": "Illustration: an oil pump jack at dusk under a volatile market line, for the crisis paper-trading project",
+  "imagePosition": "center",
+  "shortTitle": "Crisis Paper Trading",
+  "context": "Risk Management & Derivatives",
+  "date": "2026",
+  "role": "Solo",
+  "summary": "₹10 lakh of paper capital traded over 11 days while the Nifty fell ~8% during an oil shock.",
+  "keyFacts": [
+    "₹10 lakh paper capital · 11 trading days",
+    "+4.86% (₹48,591)",
+    "6/6 profitable trades while the Nifty fell ~8% during an oil shock",
+    "Positions: ONGC, KPIT Tech, Gujarat Alkalies, GRSE, Tech Mahindra, Antelopus"
+  ],
+  "category": "Derivatives & risk",
+  "status": "Completed",
+  "caseStudy": {
+    "context": "A Risk Management & Derivatives project: manage a simulated (paper) portfolio through an oil-shock sell-off. No real money was traded.",
+    "role": "Solo.",
+    "approach": [
+      "₹10 lakh of paper capital over 11 trading days.",
+      "Six positions: ONGC, KPIT Tech, Gujarat Alkalies, GRSE, Tech Mahindra and Antelopus."
+    ],
+    "results": [
+      {
+        "label": "Paper return",
+        "value": "+4.86%",
+        "note": "₹48,591 on ₹10 lakh paper capital"
+      },
+      {
+        "label": "Profitable trades",
+        "value": "6 / 6"
+      },
+      {
+        "label": "Market backdrop",
+        "value": "Nifty ~−8%",
+        "note": "Same period, during an oil shock"
+      }
+    ],
+    "resultsNote": "Per-trade entry rationale, dates and returns are not documented in the supplied sources yet.",
+    "learned": [],
+    "exhibit": {
+      "kind": "positions",
+      "tickers": [
+        "ONGC",
+        "KPIT Tech",
+        "Gujarat Alkalies",
+        "GRSE",
+        "Tech Mahindra",
+        "Antelopus"
+      ]
+    }
+  },
+  "resources": [],
+  "labels": [
+    "Paper trading"
+  ],
+  "link": {
+    "type": "case-study",
+    "label": "Explore Work"
+  },
+  "stickyNotice": "Paper trading · simulated capital, no real money"
+}

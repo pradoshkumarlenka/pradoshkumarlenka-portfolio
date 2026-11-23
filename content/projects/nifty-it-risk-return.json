@@ -1,0 +1,79 @@
+{
+  "$schema": "../schemas/project.schema.json",
+  "order": 3,
+  "slug": "nifty-it-risk-return",
+  "title": "Risk-Return Benchmarking: 10 NIFTY IT Stocks",
+  "image": "/images/portfolio/03-nifty-it-market-analysis.png",
+  "imageAlt": "Illustration: a city skyline at night with a rising market line, for the NIFTY IT analysis",
+  "imagePosition": "center",
+  "shortTitle": "NIFTY IT Benchmarking",
+  "context": "Corporate Finance",
+  "date": "Dec 2025",
+  "role": "Solo",
+  "summary": "Five years of weekly data used to benchmark the risk and return of 10 NIFTY IT stocks.",
+  "keyFacts": [
+    "5 years of weekly data",
+    "LTIMindtree β 1.12 (aggressive, 4.35% weekly volatility)",
+    "TCS β 0.86 and Wipro β 0.91 (defensive)",
+    "Correlations 0.77–0.91"
+  ],
+  "category": "Risk & return",
+  "status": "Completed",
+  "caseStudy": {
+    "context": "A Corporate Finance project benchmarking the risk and return of 10 NIFTY IT stocks.",
+    "role": "Solo.",
+    "approach": [
+      "Five years of weekly price data.",
+      "Estimated each stock's beta and weekly volatility, and the correlations between stocks."
+    ],
+    "results": [
+      {
+        "label": "LTIMindtree",
+        "value": "β 1.12",
+        "note": "Aggressive · 4.35% weekly volatility"
+      },
+      {
+        "label": "TCS",
+        "value": "β 0.86",
+        "note": "Defensive"
+      },
+      {
+        "label": "Wipro",
+        "value": "β 0.91",
+        "note": "Defensive"
+      },
+      {
+        "label": "Correlations",
+        "value": "0.77–0.91"
+      }
+    ],
+    "resultsNote": "Figures for the other seven stocks are not documented in the supplied sources and are not shown.",
+    "learned": [],
+    "exhibit": {
+      "kind": "beta",
+      "caption": "Beta of the three stocks documented in the source (3 of 10). β = 1 moves with the market.",
+      "stocks": [
+        {
+          "name": "LTIMindtree",
+          "beta": 1.12,
+          "note": "Aggressive · 4.35% weekly volatility"
+        },
+        {
+          "name": "Wipro",
+          "beta": 0.91,
+          "note": "Defensive"
+        },
+        {
+          "name": "TCS",
+          "beta": 0.86,
+          "note": "Defensive"
+        }
+      ]
+    }
+  },
+  "resources": [],
+  "link": {
+    "type": "case-study",
+    "label": "Explore Work"
+  }
+}

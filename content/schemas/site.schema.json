@@ -1,0 +1,30 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "type": "object",
+  "properties": {
+    "$schema": {
+      "type": "string",
+      "description": "Editor helper that powers hints and error checking. Leave it as it is."
+    },
+    "title": {
+      "type": "string",
+      "description": "Browser tab title."
+    },
+    "description": {
+      "type": "string",
+      "description": "One or two sentences shown in Google results and link previews."
+    },
+    "locale": {
+      "type": "string",
+      "description": "Language/region code, e.g. \"en_IN\"."
+    }
+  },
+  "required": [
+    "title",
+    "description",
+    "locale"
+  ],
+  "additionalProperties": false,
+  "description": "content/site.json — page title and description used by search engines and link previews.",
+  "definitions": {}
+}

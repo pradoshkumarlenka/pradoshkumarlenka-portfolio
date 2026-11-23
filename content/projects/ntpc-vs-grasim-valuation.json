@@ -1,0 +1,38 @@
+{
+  "$schema": "../schemas/project.schema.json",
+  "order": 2,
+  "slug": "ntpc-vs-grasim-valuation",
+  "title": "Comparative Valuation: NTPC Ltd. vs Grasim Industries Ltd.",
+  "image": "/images/portfolio/02-ntpc-grasim-industrial-valuation.png",
+  "imageAlt": "Illustration: a power plant and industrial site at night, for the NTPC vs Grasim valuation",
+  "imagePosition": "center",
+  "shortTitle": "NTPC vs Grasim Valuation",
+  "context": "Equity valuation",
+  "date": "2026",
+  "role": "Solo",
+  "summary": "An Excel valuation framework comparing NTPC and Grasim through CAPM, WACC, Gordon Growth, EVA and MVA.",
+  "keyFacts": [
+    "CAPM, WACC, Gordon Growth, EVA, MVA",
+    "Revenue, EBITDA, PAT, EPS"
+  ],
+  "category": "Equity valuation",
+  "status": "Completed",
+  "caseStudy": {
+    "context": "A comparative valuation of NTPC Ltd. and Grasim Industries Ltd.",
+    "role": "Solo. Built the Excel valuation framework.",
+    "approach": [
+      "Cost of equity with CAPM and cost of capital with WACC.",
+      "Intrinsic value with the Gordon Growth model.",
+      "Value creation with Economic Value Added (EVA) and Market Value Added (MVA).",
+      "Analysed revenue, EBITDA, PAT and EPS for both companies."
+    ],
+    "results": [],
+    "resultsNote": "The valuation outputs are not published on this page yet. They will be added together with the project workbook.",
+    "learned": []
+  },
+  "resources": [],
+  "link": {
+    "type": "case-study",
+    "label": "Explore Work"
+  }
+}

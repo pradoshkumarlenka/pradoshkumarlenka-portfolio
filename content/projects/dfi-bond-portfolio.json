@@ -1,0 +1,76 @@
+{
+  "$schema": "../schemas/project.schema.json",
+  "order": 1,
+  "slug": "dfi-bond-portfolio",
+  "title": "DFI Infrastructure & Municipal Bond Portfolio",
+  "image": "/images/portfolio/01-dfi-infrastructure-bonds.png",
+  "imageAlt": "Illustration: a lit classical institution building at night, for the bond portfolio project",
+  "imagePosition": "center",
+  "shortTitle": "₹1,000 Cr DFI Bond Portfolio",
+  "context": "Fixed Income Securities",
+  "date": "Oct 2026",
+  "role": "Project Lead; built the yield, duration and convexity model",
+  "summary": "A ₹1,000 crore, 10-bond long-duration portfolio for a DFI mandate: 85% sovereign/AAA core, 15% municipal satellite.",
+  "keyFacts": [
+    "₹1,000 crore · 10 Indian bonds",
+    "85% sovereign/AAA core + 15% municipal satellite",
+    "YTM 8.03% (+82 bp over 10-year G-sec)",
+    "Modified duration 8.14 years · convexity 112.3",
+    "12 stress scenarios · live RBI hike impact −0.47% · +100 bp shock −7.6%",
+    "20/20 mandate constraints met"
+  ],
+  "category": "Fixed income",
+  "status": "Completed",
+  "caseStudy": {
+    "context": "A Fixed Income Securities project: construct a ₹1,000 crore, long-duration Indian bond portfolio for a development finance institution (DFI) mandate.",
+    "role": "Project Lead. Led construction of the portfolio and built its yield, duration and convexity model.",
+    "approach": [
+      "Selected 10 Indian bonds: an 85% sovereign/AAA core with a 15% municipal satellite.",
+      "Modelled portfolio yield to maturity, modified duration and convexity.",
+      "Stress-tested 12 rate and credit scenarios, including the live RBI rate hike.",
+      "Checked the portfolio against the 20 mandate constraints."
+    ],
+    "results": [
+      {
+        "label": "Yield to maturity",
+        "value": "8.03%",
+        "note": "+82 bp over the 10-year G-sec"
+      },
+      {
+        "label": "Modified duration",
+        "value": "8.14 years"
+      },
+      {
+        "label": "Convexity",
+        "value": "112.3"
+      },
+      {
+        "label": "Live RBI hike scenario",
+        "value": "−0.47%"
+      },
+      {
+        "label": "+100 bp shock",
+        "value": "−7.6%"
+      },
+      {
+        "label": "Mandate constraints",
+        "value": "20 / 20 met"
+      }
+    ],
+    "learned": [],
+    "exhibit": {
+      "kind": "rate-shock",
+      "modifiedDuration": 8.14,
+      "convexity": 112.3,
+      "anchor": {
+        "bp": 100,
+        "change": "−7.6%"
+      }
+    }
+  },
+  "resources": [],
+  "link": {
+    "type": "case-study",
+    "label": "Explore Work"
+  }
+}

@@ -1,0 +1,398 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "type": "object",
+  "properties": {
+    "slug": {
+      "type": "string",
+      "description": "URL slug: /projects/<slug>"
+    },
+    "image": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "Card picture (3:2, e.g. 1200 × 800), path inside /public. Decorative artwork, not data. null = no picture."
+    },
+    "imageAlt": {
+      "type": "string",
+      "description": "Describes the picture for screen readers."
+    },
+    "imagePosition": {
+      "type": "string",
+      "description": "Which part of the picture stays in view if it is cropped, e.g. \"center\", \"top\", \"30% 50%\". Default \"center\"."
+    },
+    "title": {
+      "type": "string"
+    },
+    "shortTitle": {
+      "type": "string"
+    },
+    "context": {
+      "type": "string"
+    },
+    "date": {
+      "type": "string"
+    },
+    "role": {
+      "type": "string"
+    },
+    "summary": {
+      "type": "string"
+    },
+    "keyFacts": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "labels": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "Honest labels that must always be visible (e.g. \"Paper trading\")."
+    },
+    "category": {
+      "type": "string",
+      "description": "Short category shown on the card, e.g. \"Fixed income\"."
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "Completed",
+        "Ongoing"
+      ],
+      "description": "Shown as a badge on the card and case-study page."
+    },
+    "statusLabel": {
+      "type": "string",
+      "description": "Optional free-text status shown on the card instead of `status` (from the admin dashboard)."
+    },
+    "caseStudy": {
+      "type": "object",
+      "properties": {
+        "context": {
+          "type": "string",
+          "description": "The problem, mandate or objective."
+        },
+        "role": {
+          "type": "string",
+          "description": "What the portfolio owner actually contributed."
+        },
+        "approach": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "results": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "label": {
+                "type": "string"
+              },
+              "value": {
+                "type": "string"
+              },
+              "note": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "label",
+              "value"
+            ],
+            "additionalProperties": false
+          },
+          "description": "Verified results only. Empty = shown as \"not yet published\" with resultsNote."
+        },
+        "resultsNote": {
+          "type": "string"
+        },
+        "learned": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "description": "Only when supported by project documentation; empty = section omitted."
+        },
+        "exhibit": {
+          "anyOf": [
+            {
+              "type": "object",
+              "properties": {
+                "kind": {
+                  "type": "string",
+                  "const": "rate-shock"
+                },
+                "modifiedDuration": {
+                  "type": "number",
+                  "description": "Documented portfolio modified duration (years)."
+                },
+                "convexity": {
+                  "type": "number",
+                  "description": "Documented portfolio convexity."
+                },
+                "anchor": {
+                  "type": "object",
+                  "properties": {
+                    "bp": {
+                      "type": "number"
+                    },
+                    "change": {
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "bp",
+                    "change"
+                  ],
+                  "additionalProperties": false,
+                  "description": "Documented result the illustration is anchored to."
+                }
+              },
+              "required": [
+                "kind",
+                "modifiedDuration",
+                "convexity",
+                "anchor"
+              ],
+              "additionalProperties": false
+            },
+            {
+              "type": "object",
+              "properties": {
+                "kind": {
+                  "type": "string",
+                  "const": "beta"
+                },
+                "stocks": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "name": {
+                        "type": "string"
+                      },
+                      "beta": {
+                        "type": "number"
+                      },
+                      "note": {
+                        "type": "string"
+                      }
+                    },
+                    "required": [
+                      "name",
+                      "beta",
+                      "note"
+                    ],
+                    "additionalProperties": false
+                  }
+                },
+                "caption": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "kind",
+                "stocks",
+                "caption"
+              ],
+              "additionalProperties": false
+            },
+            {
+              "type": "object",
+              "properties": {
+                "kind": {
+                  "type": "string",
+                  "const": "positions"
+                },
+                "tickers": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                }
+              },
+              "required": [
+                "kind",
+                "tickers"
+              ],
+              "additionalProperties": false
+            },
+            {
+              "type": "object",
+              "properties": {
+                "kind": {
+                  "type": "string",
+                  "const": "frameworks"
+                },
+                "steps": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "name": {
+                        "type": "string"
+                      },
+                      "focus": {
+                        "type": "string"
+                      }
+                    },
+                    "required": [
+                      "name",
+                      "focus"
+                    ],
+                    "additionalProperties": false
+                  }
+                }
+              },
+              "required": [
+                "kind",
+                "steps"
+              ],
+              "additionalProperties": false
+            }
+          ],
+          "description": "Project-specific interactive exhibit on a case-study page (only with documented data)."
+        }
+      },
+      "required": [
+        "context",
+        "role",
+        "approach",
+        "results",
+        "learned"
+      ],
+      "additionalProperties": false,
+      "description": "The full case-study page. Leave this out if the project has no case study."
+    },
+    "stickyNotice": {
+      "type": "string",
+      "description": "Optional message pinned to the top of the case-study page while scrolling (e.g. \"Paper trading · no real money\")."
+    },
+    "resources": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "title": {
+            "type": "string"
+          },
+          "description": {
+            "type": "string"
+          },
+          "fileType": {
+            "type": "string",
+            "enum": [
+              "ppt",
+              "pptx",
+              "xls",
+              "xlsx",
+              "pdf",
+              "doc",
+              "docx",
+              "link"
+            ],
+            "description": "File types a project resource can be. \"link\" is an external URL."
+          },
+          "href": {
+            "type": "string",
+            "description": "Local files: a path relative to /public, e.g. \"/projects/dfi-bond-portfolio/model.xlsx\". External links: a full URL starting with https://"
+          },
+          "action": {
+            "type": "string",
+            "enum": [
+              "open",
+              "download",
+              "external"
+            ],
+            "description": "What happens on click:  - \"open\"      opens the file in a new tab (best for PDF)  - \"download\"  downloads the file (best for PPT/XLS/DOC)  - \"external\"  navigates to an outside URL in a new tab"
+          },
+          "label": {
+            "type": "string",
+            "description": "Optional button text. Defaults to \"Open\", \"Download\" or \"Visit\"."
+          },
+          "preview": {
+            "type": "string",
+            "description": "Optional PDF rendering of a PPT/PPTX/DOC file (e.g. produced by `npm run convert:office`), shown in the internal viewer. Without it, those formats offer the original download only."
+          },
+          "downloadHref": {
+            "type": "string",
+            "description": "Optional separate download address (e.g. a database attachment's ?download=1 link)."
+          },
+          "fileName": {
+            "type": "string",
+            "description": "Optional file name to display when `href` does not end in one."
+          }
+        },
+        "required": [
+          "title",
+          "fileType",
+          "href",
+          "action"
+        ],
+        "additionalProperties": false
+      },
+      "description": "Optional files and links. Leave empty when there are none; the panel hides itself."
+    },
+    "$schema": {
+      "type": "string",
+      "description": "Editor helper that powers hints and error checking. Leave it as it is."
+    },
+    "order": {
+      "type": "number",
+      "description": "Position in the grid: 1 = first."
+    },
+    "link": {
+      "type": "object",
+      "properties": {
+        "type": {
+          "type": "string",
+          "enum": [
+            "case-study",
+            "page",
+            "link",
+            "file",
+            "none"
+          ],
+          "description": "\"case-study\" = this item's detail page; \"page\" = another page on this site (href, e.g. \"/research/x\"); \"link\" = a website (href); \"file\" = a file in /public opened in the in-site viewer (href); \"none\" = the card is not clickable."
+        },
+        "label": {
+          "type": "string",
+          "description": "Text at the bottom of the card, e.g. \"Explore Work\"."
+        },
+        "href": {
+          "type": "string",
+          "description": "Needed for \"link\" (full https:// address) and \"file\" (path inside /public)."
+        }
+      },
+      "required": [
+        "type",
+        "label"
+      ],
+      "additionalProperties": false,
+      "description": "Where the card leads and what its link says."
+    }
+  },
+  "required": [
+    "category",
+    "context",
+    "date",
+    "keyFacts",
+    "link",
+    "order",
+    "resources",
+    "role",
+    "shortTitle",
+    "slug",
+    "status",
+    "summary",
+    "title"
+  ],
+  "additionalProperties": false,
+  "description": "content/projects/NAME.json — one project card (and its case study, if any).",
+  "definitions": {}
+}

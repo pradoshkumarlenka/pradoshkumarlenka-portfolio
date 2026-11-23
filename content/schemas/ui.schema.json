@@ -1,0 +1,366 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "type": "object",
+  "properties": {
+    "$schema": {
+      "type": "string",
+      "description": "Editor helper that powers hints and error checking. Leave it as it is."
+    },
+    "navigation": {
+      "type": "object",
+      "properties": {
+        "openMenu": {
+          "type": "string"
+        },
+        "closeMenu": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "openMenu",
+        "closeMenu"
+      ],
+      "additionalProperties": false
+    },
+    "selectedWork": {
+      "type": "object",
+      "properties": {
+        "heading": {
+          "type": "string",
+          "description": "Small heading above the project cards."
+        },
+        "countLabel": {
+          "type": "string",
+          "description": "Word after the number of items, e.g. \"items\"."
+        },
+        "action": {
+          "type": "string",
+          "description": "The one action shown on every card, e.g. \"Explore Work\"."
+        }
+      },
+      "required": [
+        "heading",
+        "countLabel",
+        "action"
+      ],
+      "additionalProperties": false
+    },
+    "caseStudy": {
+      "type": "object",
+      "properties": {
+        "backLink": {
+          "type": "string"
+        },
+        "nextLabel": {
+          "type": "string"
+        },
+        "headings": {
+          "type": "object",
+          "properties": {
+            "context": {
+              "type": "string"
+            },
+            "role": {
+              "type": "string"
+            },
+            "approach": {
+              "type": "string"
+            },
+            "results": {
+              "type": "string"
+            },
+            "learned": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "context",
+            "role",
+            "approach",
+            "results",
+            "learned"
+          ],
+          "additionalProperties": false
+        },
+        "positionsLabel": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "backLink",
+        "nextLabel",
+        "headings",
+        "positionsLabel"
+      ],
+      "additionalProperties": false
+    },
+    "resources": {
+      "type": "object",
+      "properties": {
+        "heading": {
+          "type": "string"
+        },
+        "preview": {
+          "type": "string"
+        },
+        "downloadOriginal": {
+          "type": "string"
+        },
+        "openLink": {
+          "type": "string"
+        },
+        "opensInNewTab": {
+          "type": "string"
+        },
+        "verify": {
+          "type": "string"
+        },
+        "actions": {
+          "type": "object",
+          "properties": {
+            "report": {
+              "type": "string"
+            },
+            "presentation": {
+              "type": "string"
+            },
+            "model": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "report",
+            "presentation",
+            "model"
+          ],
+          "additionalProperties": false,
+          "description": "Open-button text by file kind (PDF/Word = report, PowerPoint = presentation, Excel = model)."
+        }
+      },
+      "required": [
+        "heading",
+        "preview",
+        "downloadOriginal",
+        "openLink",
+        "opensInNewTab",
+        "verify",
+        "actions"
+      ],
+      "additionalProperties": false
+    },
+    "viewer": {
+      "type": "object",
+      "properties": {
+        "close": {
+          "type": "string"
+        },
+        "loadingPdf": {
+          "type": "string"
+        },
+        "loadingWorkbook": {
+          "type": "string"
+        },
+        "loadingDocument": {
+          "type": "string"
+        },
+        "pdfError": {
+          "type": "string",
+          "description": "{error} is replaced with the technical reason."
+        },
+        "workbookError": {
+          "type": "string"
+        },
+        "documentError": {
+          "type": "string"
+        },
+        "noPreview": {
+          "type": "string"
+        },
+        "emptySheet": {
+          "type": "string"
+        },
+        "workbookNote": {
+          "type": "string"
+        },
+        "documentNote": {
+          "type": "string"
+        },
+        "page": {
+          "type": "string"
+        },
+        "slide": {
+          "type": "string"
+        },
+        "of": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "close",
+        "loadingPdf",
+        "loadingWorkbook",
+        "loadingDocument",
+        "pdfError",
+        "workbookError",
+        "documentError",
+        "noPreview",
+        "emptySheet",
+        "workbookNote",
+        "documentNote",
+        "page",
+        "slide",
+        "of"
+      ],
+      "additionalProperties": false
+    },
+    "charts": {
+      "type": "object",
+      "properties": {
+        "rateShock": {
+          "type": "object",
+          "properties": {
+            "title": {
+              "type": "string"
+            },
+            "badge": {
+              "type": "string"
+            },
+            "shiftLabel": {
+              "type": "string"
+            },
+            "changeLabel": {
+              "type": "string"
+            },
+            "footnote": {
+              "type": "string",
+              "description": "{D} duration, {C} convexity, {bp} anchor shift, {result} calculated change, {documented} documented change."
+            }
+          },
+          "required": [
+            "title",
+            "badge",
+            "shiftLabel",
+            "changeLabel",
+            "footnote"
+          ],
+          "additionalProperties": false
+        },
+        "beta": {
+          "type": "object",
+          "properties": {
+            "title": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "title"
+          ],
+          "additionalProperties": false
+        },
+        "pairedBars": {
+          "type": "object",
+          "properties": {
+            "referenceLine": {
+              "type": "string"
+            },
+            "sourcePrefix": {
+              "type": "string"
+            },
+            "sourcePending": {
+              "type": "string"
+            },
+            "hint": {
+              "type": "string",
+              "description": "Shown under the bars until one is hovered, focused or tapped."
+            },
+            "versus": {
+              "type": "string",
+              "description": "\"{change} vs {other}\""
+            },
+            "aboveFull": {
+              "type": "string",
+              "description": "\"{gap} pp above full collection\" / \"… below …\""
+            },
+            "belowFull": {
+              "type": "string"
+            },
+            "shareOf": {
+              "type": "string",
+              "description": "\"{share}% of {other}\" (for ₹ amounts, the smaller value as a share of the larger)"
+            }
+          },
+          "required": [
+            "referenceLine",
+            "sourcePrefix",
+            "sourcePending",
+            "hint",
+            "versus",
+            "aboveFull",
+            "belowFull",
+            "shareOf"
+          ],
+          "additionalProperties": false
+        }
+      },
+      "required": [
+        "rateShock",
+        "beta",
+        "pairedBars"
+      ],
+      "additionalProperties": false
+    },
+    "placeholders": {
+      "type": "object",
+      "properties": {
+        "imagePending": {
+          "type": "string"
+        },
+        "portrait": {
+          "type": "string"
+        },
+        "certificate": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "imagePending",
+        "portrait",
+        "certificate"
+      ],
+      "additionalProperties": false
+    },
+    "notFound": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "string"
+        },
+        "title": {
+          "type": "string"
+        },
+        "button": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "code",
+        "title",
+        "button"
+      ],
+      "additionalProperties": false
+    }
+  },
+  "required": [
+    "navigation",
+    "selectedWork",
+    "caseStudy",
+    "resources",
+    "viewer",
+    "charts",
+    "placeholders",
+    "notFound"
+  ],
+  "additionalProperties": false,
+  "description": "content/ui.json — small interface words (buttons, headings, messages). Words in {curly braces} are filled in automatically: keep them exactly as they are.",
+  "definitions": {}
+}

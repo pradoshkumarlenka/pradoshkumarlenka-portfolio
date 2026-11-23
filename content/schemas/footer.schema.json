@@ -1,0 +1,27 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "type": "object",
+  "properties": {
+    "$schema": {
+      "type": "string",
+      "description": "Editor helper that powers hints and error checking. Leave it as it is."
+    },
+    "copyright": {
+      "type": "string"
+    },
+    "signoff": {
+      "type": "string"
+    },
+    "backToTop": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "copyright",
+    "signoff",
+    "backToTop"
+  ],
+  "additionalProperties": false,
+  "description": "content/footer.json",
+  "definitions": {}
+}

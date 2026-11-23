@@ -1,0 +1,84 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "type": "object",
+  "properties": {
+    "$schema": {
+      "type": "string",
+      "description": "Editor helper that powers hints and error checking. Leave it as it is."
+    },
+    "items": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "role": {
+            "type": "string",
+            "description": "Card heading, e.g. \"Toastmaster\"."
+          },
+          "context": {
+            "type": "string",
+            "description": "Small line under the heading: programme, place or date."
+          },
+          "detail": {
+            "type": "string",
+            "description": "What was done (one or two sentences)."
+          },
+          "impact": {
+            "type": "string",
+            "description": "One concise impact sentence, brightened when the card is hovered or focused."
+          },
+          "metric": {
+            "type": "string",
+            "description": "Big figure on medium/small cards, e.g. \"50+\"."
+          },
+          "metricLabel": {
+            "type": "string",
+            "description": "Words after the big figure, e.g. \"students\"."
+          },
+          "stats": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "value": {
+                  "type": "string"
+                },
+                "label": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "value",
+                "label"
+              ],
+              "additionalProperties": false
+            },
+            "description": "Several figures (used on the large card)."
+          },
+          "size": {
+            "type": "string",
+            "enum": [
+              "large",
+              "medium",
+              "small"
+            ],
+            "description": "\"large\" = feature card, \"medium\" = wide card, \"small\" = compact card."
+          }
+        },
+        "required": [
+          "role",
+          "context",
+          "detail",
+          "size"
+        ],
+        "additionalProperties": false
+      }
+    }
+  },
+  "required": [
+    "items"
+  ],
+  "additionalProperties": false,
+  "description": "content/leadership.json",
+  "definitions": {}
+}

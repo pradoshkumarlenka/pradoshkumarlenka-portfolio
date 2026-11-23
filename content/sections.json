@@ -1,0 +1,96 @@
+{
+  "$schema": "./schemas/sections.schema.json",
+  "sections": [
+    {
+      "id": "loader",
+      "title": "Intro",
+      "visible": true,
+      "order": 0
+    },
+    {
+      "id": "hero",
+      "title": "Hero",
+      "visible": true,
+      "order": 1
+    },
+    {
+      "id": "intro",
+      "title": "Meet Pradosh",
+      "eyebrow": "Introduction",
+      "visible": true,
+      "order": 1.5
+    },
+    {
+      "id": "proof",
+      "title": "A few milestones so far.",
+      "visible": true,
+      "order": 2,
+      "eyebrow": "The record"
+    },
+    {
+      "id": "experience",
+      "title": "Experience",
+      "eyebrow": "Work",
+      "navLabel": "Experience",
+      "visible": true,
+      "order": 3
+    },
+    {
+      "id": "research-work",
+      "title": "Research & Selected Work",
+      "eyebrow": "Original thinking, technical depth",
+      "navLabel": "Research & Work",
+      "visible": true,
+      "order": 4,
+      "intro": "A curated collection of research, financial analysis, valuation models and strategic insights."
+    },
+    {
+      "id": "leadership",
+      "title": "Leadership",
+      "eyebrow": "People",
+      "navLabel": "Leadership",
+      "visible": true,
+      "order": 5
+    },
+    {
+      "id": "honours",
+      "title": "Honours & Credentials",
+      "eyebrow": "Proof",
+      "navLabel": "Honours",
+      "visible": true,
+      "order": 6
+    },
+    {
+      "id": "beyond",
+      "title": "The experiences that shape perspective.",
+      "eyebrow": "Beyond the classroom",
+      "visible": true,
+      "order": 7,
+      "intro": "Learning extends beyond the classroom — through markets, institutions and conversations."
+    },
+    {
+      "id": "resume",
+      "title": "Résumé Library",
+      "eyebrow": "Take something away",
+      "navLabel": "Résumé",
+      "visible": true,
+      "order": 8,
+      "intro": "Explore my professional profile, academic background, experience, projects, and achievements in one place."
+    },
+    {
+      "id": "contact",
+      "title": "Let's build something rigorous together.",
+      "eyebrow": "Contact",
+      "navLabel": "Contact",
+      "visible": true,
+      "order": 9,
+      "intro": "I'm open to meaningful conversations, research opportunities, collaborative projects, and professional connections."
+    },
+    {
+      "id": "footer",
+      "title": "Footer",
+      "visible": true,
+      "order": 10
+    }
+  ]
+}

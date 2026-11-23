@@ -1,0 +1,13 @@
+{
+  "file": "/resumes/Pradosh_Kumar_Lenka_Resume_Master.pdf",
+  "label": "Master Résumé",
+  "labels": {
+    "meta": "PDF · {size}",
+    "open": "Open in a new tab",
+    "missing": "The résumé file is being updated — please check back shortly.",
+    "download": "Download Master Résumé"
+  },
+  "$schema": "./schemas/resume.schema.json",
+  "description": "One page: experience, education, projects, leadership and honours.",
+  "downloadName": "Pradosh_Kumar_Lenka_Resume_Master.pdf"
+}

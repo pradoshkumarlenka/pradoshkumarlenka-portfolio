@@ -1,0 +1,88 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "type": "object",
+  "properties": {
+    "$schema": {
+      "type": "string",
+      "description": "Editor helper that powers hints and error checking. Leave it as it is."
+    },
+    "links": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "kind": {
+            "type": "string",
+            "enum": [
+              "email",
+              "phone",
+              "linkedin"
+            ]
+          },
+          "label": {
+            "type": "string"
+          },
+          "value": {
+            "type": "string"
+          },
+          "href": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "kind",
+          "label",
+          "value",
+          "href"
+        ],
+        "additionalProperties": false
+      }
+    },
+    "location": {
+      "type": "string",
+      "description": "City shown under the contact rows (optional)."
+    },
+    "headshot": {
+      "type": "string",
+      "description": "Formal headshot path inside /public."
+    },
+    "headshotAlt": {
+      "type": "string",
+      "description": "Describes the headshot for screen readers."
+    },
+    "labels": {
+      "type": "object",
+      "properties": {
+        "copy": {
+          "type": "string"
+        },
+        "copied": {
+          "type": "string"
+        },
+        "copyFailed": {
+          "type": "string"
+        },
+        "opensInNewTab": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "copy",
+        "copied",
+        "copyFailed",
+        "opensInNewTab"
+      ],
+      "additionalProperties": false,
+      "description": "Words used in the Contact section."
+    }
+  },
+  "required": [
+    "links",
+    "headshot",
+    "headshotAlt",
+    "labels"
+  ],
+  "additionalProperties": false,
+  "description": "content/contact.json",
+  "definitions": {}
+}

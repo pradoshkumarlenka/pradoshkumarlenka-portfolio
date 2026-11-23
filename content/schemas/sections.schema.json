@@ -1,0 +1,72 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "type": "object",
+  "properties": {
+    "$schema": {
+      "type": "string",
+      "description": "Editor helper that powers hints and error checking. Leave it as it is."
+    },
+    "sections": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "enum": [
+              "loader",
+              "hero",
+              "intro",
+              "proof",
+              "experience",
+              "research-work",
+              "leadership",
+              "honours",
+              "beyond",
+              "resume",
+              "contact",
+              "footer"
+            ]
+          },
+          "title": {
+            "type": "string",
+            "description": "Heading shown at the top of the section."
+          },
+          "eyebrow": {
+            "type": "string",
+            "description": "Small label above the heading (optional)."
+          },
+          "intro": {
+            "type": "string",
+            "description": "One supporting line under the heading (optional)."
+          },
+          "navLabel": {
+            "type": "string",
+            "description": "Label in the sticky navigation. Omit to keep the section out of the nav."
+          },
+          "visible": {
+            "type": "boolean",
+            "description": "false hides the section (and its nav link) everywhere."
+          },
+          "order": {
+            "type": "number",
+            "description": "Lower numbers render first."
+          }
+        },
+        "required": [
+          "id",
+          "title",
+          "visible",
+          "order"
+        ],
+        "additionalProperties": false
+      }
+    }
+  },
+  "required": [
+    "sections"
+  ],
+  "additionalProperties": false,
+  "description": "content/sections.json — which homepage sections show, their order, headings and menu labels.",
+  "definitions": {}
+}

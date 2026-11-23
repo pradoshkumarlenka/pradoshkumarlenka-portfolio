@@ -1,0 +1,361 @@
+{
+  "$schema": "./schemas/beyond.schema.json",
+  "items": [
+    {
+      "id": "nism-study-tour",
+      "title": "NISM study tour, Patalganga",
+      "category": "Markets · Nov 2025",
+      "caption": "Three days at NISM's campus on careers and regulation in India's securities markets.",
+      "image": "/photos/beyond-classroom/nism-study-tour.jpg",
+      "imageAlt": "Pradosh standing beside the NISM Campus at Patalganga plaque, with the institute building behind",
+      "imagePosition": "62% center"
+    },
+    {
+      "id": "nse-visit",
+      "title": "National Stock Exchange",
+      "category": "Markets",
+      "caption": "An industry visit to NSE with the SSIM cohort.",
+      "image": "/photos/beyond-classroom/nse-visit.jpg",
+      "imageAlt": "Pradosh in a suit beside the bull sculpture under the NSE sign",
+      "imagePosition": "center 45%"
+    },
+    {
+      "id": "nse-bell",
+      "title": "Ringing the NSE bell",
+      "category": "Markets",
+      "caption": "Rang the bell at NSE during the SSIM visit.",
+      "image": "/photos/beyond-classroom/nse-bell.jpg",
+      "imageAlt": "Pradosh ringing the NSE bell inside a marigold arch, with a Siva Sivani Institute of Management screen above",
+      "imagePosition": "72% center"
+    },
+    {
+      "id": "deloitte-nic-2026",
+      "title": "Deloitte National Internship Conference",
+      "category": "Professional · 2026",
+      "caption": "At Deloitte's National Internship Conference 2026.",
+      "image": "/photos/beyond-classroom/deloitte-national-internship-conference.jpg",
+      "imageAlt": "Pradosh holding a framed memento in front of the Deloitte National Internship Conference 2026 backdrop",
+      "imagePosition": "center 30%"
+    },
+    {
+      "id": "obt-team-blue",
+      "title": "Outbound Training — Team Blue",
+      "category": "Teams · Aug 2025",
+      "caption": "Led Team Blue through the PGDM outbound training; the team placed 2nd overall.",
+      "image": "/photos/beyond-classroom/obt-team-blue.jpg",
+      "imageAlt": "Pradosh with Team Blue in matching navy shirts and caps, giving a thumbs-up outdoors",
+      "imagePosition": "center"
+    },
+    {
+      "id": "obt-team-activity",
+      "title": "Outbound training, in motion",
+      "category": "Teams · Aug 2025",
+      "caption": "A team ski-walk exercise during outbound training.",
+      "image": "/photos/beyond-classroom/obt-team-activity.jpg",
+      "imageAlt": "Team members in caps walking in step on shared wooden skis during an outbound-training exercise",
+      "imagePosition": "center"
+    },
+    {
+      "id": "ssim-live-quiz",
+      "title": "Live quiz — 1st place",
+      "category": "Campus",
+      "caption": "Topped the live leaderboard at an SSIM quiz.",
+      "image": "/photos/beyond-classroom/ssim-live-quiz.jpg",
+      "imageAlt": "Pradosh receiving a prize in front of a live-quiz leaderboard congratulating him",
+      "imagePosition": "center 42%"
+    },
+    {
+      "id": "ssim-inaugural-programme",
+      "title": "PGDM inaugural programme",
+      "category": "Campus · 2025",
+      "caption": "Recognised on stage at SSIM's PGDM 2025–27 inaugural programme.",
+      "image": "/photos/beyond-classroom/ssim-inaugural-programme.jpg",
+      "imageAlt": "Pradosh receiving a certificate on stage under the Siva Sivani Institute of Management inaugural programme banner",
+      "imagePosition": "center 45%"
+    },
+    {
+      "id": "campus-ambassador",
+      "title": "Campus Ambassador",
+      "category": "Campus",
+      "caption": "Representing SSIM as a campus ambassador.",
+      "image": "/photos/beyond-classroom/campus-ambassador.jpg",
+      "imageAlt": "Pradosh in a suit wearing a Campus Ambassador badge, beside a Siva Sivani Institute of Management banner",
+      "imagePosition": "center"
+    },
+    {
+      "id": "classmates-01",
+      "title": "With classmates",
+      "category": "Campus",
+      "caption": "PGDM classmates, together on campus.",
+      "image": "/photos/beyond-classroom/classmates-01.jpg",
+      "imageAlt": "Pradosh standing with eight classmates outside a campus building",
+      "imagePosition": "center"
+    },
+    {
+      "id": "classmates-02",
+      "title": "Batch moments",
+      "category": "Campus",
+      "caption": "Another frame with the same group of classmates.",
+      "image": "/photos/beyond-classroom/classmates-02.jpg",
+      "imageAlt": "Pradosh and classmates posing side by side outside a campus building",
+      "imagePosition": "center"
+    },
+    {
+      "id": "classmates-03",
+      "title": "Under the yellow blossoms",
+      "category": "Campus",
+      "caption": "Classmates gathered beneath a flowering tree.",
+      "image": "/photos/beyond-classroom/classmates-03.jpg",
+      "imageAlt": "Pradosh with classmates in front of a tree in yellow bloom",
+      "imagePosition": "center"
+    },
+    {
+      "id": "faculty-project-01",
+      "title": "Project showcase with faculty",
+      "category": "Campus",
+      "caption": "Presenting a team model alongside faculty members.",
+      "image": "/photos/beyond-classroom/faculty-project-01.jpg",
+      "imageAlt": "Pradosh with classmates and two faculty members around a table holding a handmade model",
+      "imagePosition": "center"
+    },
+    {
+      "id": "faculty-project-02",
+      "title": "Showcase, team photo",
+      "category": "Campus",
+      "caption": "The team and faculty with the finished model.",
+      "image": "/photos/beyond-classroom/faculty-project-02.jpg",
+      "imageAlt": "Pradosh with classmates and faculty members beside a table with a small model",
+      "imagePosition": "center"
+    },
+    {
+      "id": "obt-field",
+      "title": "Outbound training, on the field",
+      "category": "Teams",
+      "caption": "Team exercises on an open field during outbound training.",
+      "image": "/photos/beyond-classroom/obt-field.jpg",
+      "imageAlt": "Participants in caps working through a rope-and-stake course on a grassy field",
+      "imagePosition": "center"
+    },
+    {
+      "id": "obt-group",
+      "title": "Outbound training group",
+      "category": "Teams",
+      "caption": "The outbound-training group, gathered outdoors.",
+      "image": "/photos/beyond-classroom/obt-group.jpg",
+      "imageAlt": "A large group of participants in caps and t-shirts standing under trees",
+      "imagePosition": "center"
+    },
+    {
+      "id": "festival-group",
+      "title": "Festival celebration",
+      "category": "Celebrations",
+      "caption": "Celebrating a festival on campus with the batch.",
+      "image": "/photos/beyond-classroom/festival-group.jpg",
+      "imageAlt": "A large group seated in front of a decorated festival setting with marigold garlands",
+      "imagePosition": "center"
+    },
+    {
+      "id": "formal-evening",
+      "title": "A formal evening",
+      "category": "Campus",
+      "caption": "With peers in formal wear.",
+      "image": "/photos/beyond-classroom/formal-evening.jpg",
+      "imageAlt": "Pradosh with five peers in formal clothes in a brightly lit hall",
+      "imagePosition": "center"
+    },
+    {
+      "id": "selfie-guest",
+      "title": "Meeting a guest",
+      "category": "Professional",
+      "caption": "A moment with a guest after an event.",
+      "image": "/photos/beyond-classroom/selfie-guest.jpg",
+      "imageAlt": "A selfie of Pradosh in a suit and red tie beside an older man in a cream kurta",
+      "imagePosition": "center"
+    },
+    {
+      "id": "campus-ambassador-02",
+      "title": "Ambassador on duty",
+      "category": "Campus",
+      "caption": "Wearing the campus ambassador badge and lanyard.",
+      "image": "/photos/beyond-classroom/campus-ambassador-02.jpg",
+      "imageAlt": "Pradosh in a suit, sunglasses and lanyard with a campus ambassador badge",
+      "imagePosition": "center"
+    },
+    {
+      "id": "desk-discussion",
+      "title": "At the desk",
+      "category": "Professional",
+      "caption": "Discussion with two officials at their desks.",
+      "image": "/photos/beyond-classroom/desk-discussion.jpg",
+      "imageAlt": "Pradosh seated between two men at desks with laptops",
+      "imagePosition": "center"
+    },
+    {
+      "id": "night-handshake",
+      "title": "An evening handshake",
+      "category": "Campus",
+      "caption": "Shaking hands with a guest at a night event.",
+      "image": "/photos/beyond-classroom/night-handshake.jpg",
+      "imageAlt": "Pradosh shaking hands with a man in a maroon blazer at an evening venue",
+      "imagePosition": "center"
+    },
+    {
+      "id": "friends-venue",
+      "title": "With friends at the venue",
+      "category": "Campus",
+      "caption": "With two friends at an event venue.",
+      "image": "/photos/beyond-classroom/friends-venue.jpg",
+      "imageAlt": "Pradosh giving a thumbs-up between two friends under a stage canopy",
+      "imagePosition": "center"
+    },
+    {
+      "id": "desk-discussion-02",
+      "title": "In conversation",
+      "category": "Professional",
+      "caption": "Another moment from the same discussion.",
+      "image": "/photos/beyond-classroom/desk-discussion-02.jpg",
+      "imageAlt": "Pradosh at a desk with two men, one gesturing as he speaks",
+      "imagePosition": "center"
+    },
+    {
+      "id": "presenting-strategy",
+      "title": "Presenting a strategy",
+      "category": "Presentations",
+      "caption": "Presenting a slide titled “Don't Convince Everyone”.",
+      "image": "/photos/beyond-classroom/presenting-strategy.jpg",
+      "imageAlt": "Pradosh holding a microphone in front of a screen showing a strategy slide",
+      "imagePosition": "center"
+    },
+    {
+      "id": "starbucks",
+      "title": "Coffee break",
+      "category": "Campus",
+      "caption": "A pause at Starbucks.",
+      "image": "/photos/beyond-classroom/starbucks.jpg",
+      "imageAlt": "Pradosh in a maroon shirt leaning against a wall beside a Starbucks logo",
+      "imagePosition": "center"
+    },
+    {
+      "id": "team-room",
+      "title": "Team in the room",
+      "category": "Teams",
+      "caption": "With a team, laptop on the table.",
+      "image": "/photos/beyond-classroom/team-room.jpg",
+      "imageAlt": "Pradosh with seven men in formal and casual clothes in an office room",
+      "imagePosition": "center"
+    },
+    {
+      "id": "grand-hall",
+      "title": "Suited up",
+      "category": "Campus",
+      "caption": "With friends in a grand hall.",
+      "image": "/photos/beyond-classroom/grand-hall.jpg",
+      "imageAlt": "Pradosh with four friends in suits in an ornate hall",
+      "imagePosition": "center"
+    },
+    {
+      "id": "graduation-01",
+      "title": "Graduation day",
+      "category": "Milestones",
+      "caption": "Convocation with fellow graduates in caps and stoles.",
+      "image": "/photos/beyond-classroom/graduation-01.jpg",
+      "imageAlt": "Pradosh with two graduates in gowns, caps and orange stoles in an auditorium",
+      "imagePosition": "center"
+    },
+    {
+      "id": "graduation-02",
+      "title": "Receiving the degree",
+      "category": "Milestones",
+      "caption": "On stage at Utsav ’25, Avinash College of Commerce.",
+      "image": "/photos/beyond-classroom/graduation-02.jpg",
+      "imageAlt": "Pradosh in a graduation gown receiving a certificate on stage under an Utsav 25 banner",
+      "imagePosition": "center"
+    },
+    {
+      "id": "nism-classroom",
+      "title": "Inside NISM",
+      "category": "Professional",
+      "caption": "In a lecture hall at NISM during the study tour.",
+      "image": "/photos/beyond-classroom/nism-classroom.jpg",
+      "imageAlt": "Pradosh in a red shirt and lanyard in a lecture hall with an NISM screen behind",
+      "imagePosition": "center"
+    },
+    {
+      "id": "lectern",
+      "title": "At the lectern",
+      "category": "Presentations",
+      "caption": "Speaking from a lectern with a microphone.",
+      "image": "/photos/beyond-classroom/lectern.jpg",
+      "imageAlt": "Pradosh in a suit seated at a lectern speaking into a microphone",
+      "imagePosition": "center"
+    },
+    {
+      "id": "presenting-book",
+      "title": "Book overview presentation",
+      "category": "Presentations",
+      "caption": "Presenting a slide titled “Overview of This Book”.",
+      "image": "/photos/beyond-classroom/presenting-book.jpg",
+      "imageAlt": "Pradosh with a microphone presenting beside a screen reading Overview of This Book",
+      "imagePosition": "center"
+    },
+    {
+      "id": "presenting-video",
+      "title": "Presenting to the class",
+      "category": "Presentations",
+      "caption": "Presenting with slides on screen.",
+      "image": "/photos/beyond-classroom/presenting-video.jpg",
+      "imageAlt": "Pradosh holding a microphone beside a screen showing film stills",
+      "imagePosition": "center"
+    },
+    {
+      "id": "flag",
+      "title": "With the tricolour",
+      "category": "Celebrations",
+      "caption": "Holding the Indian flag with friends.",
+      "image": "/photos/beyond-classroom/flag.jpg",
+      "imageAlt": "Pradosh with friends holding up the Indian national flag outdoors",
+      "imagePosition": "center"
+    },
+    {
+      "id": "deloitte-office",
+      "title": "Deloitte office",
+      "category": "Professional",
+      "caption": "Outside the Deloitte office.",
+      "image": "/photos/beyond-classroom/deloitte-office.jpg",
+      "imageAlt": "Pradosh standing in a landscaped courtyard in front of a Deloitte office tower",
+      "imagePosition": "center"
+    },
+    {
+      "id": "colourful-wall",
+      "title": "With colleagues",
+      "category": "Professional",
+      "caption": "With two colleagues in front of a colourful mural.",
+      "image": "/photos/beyond-classroom/colourful-wall.jpg",
+      "imageAlt": "Pradosh in a maroon shirt between two colleagues in front of a wall of colourful posters",
+      "imagePosition": "center"
+    },
+    {
+      "id": "guest-lecture",
+      "title": "Guest lecture: From Data to Decisions",
+      "category": "Campus",
+      "caption": "At an SSIM guest lecture on business analytics.",
+      "image": "/photos/beyond-classroom/guest-lecture.jpg",
+      "imageAlt": "Pradosh with students and faculty in front of a screen announcing the guest lecture From Data to Decisions",
+      "imagePosition": "center"
+    },
+    {
+      "id": "festival-group-02",
+      "title": "Festival, with friends",
+      "category": "Celebrations",
+      "caption": "Seated with friends at a festival celebration.",
+      "image": "/photos/beyond-classroom/festival-group-02.jpg",
+      "imageAlt": "Pradosh seated with friends in front of a decorated idol with marigold garlands",
+      "imagePosition": "center"
+    }
+  ],
+  "labels": {
+    "previous": "Previous experience",
+    "next": "Next experience",
+    "stack": "Experiences"
+  }
+}

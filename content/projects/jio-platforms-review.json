@@ -1,0 +1,55 @@
+{
+  "$schema": "../schemas/project.schema.json",
+  "order": 5,
+  "slug": "jio-platforms-review",
+  "title": "Company Review: Jio Platforms",
+  "image": "/images/portfolio/05-jio-platforms-company-review.png",
+  "imageAlt": "Illustration: a Jio Platforms headquarters at dusk beside a city skyline, with strategy books and a report on a desk, for the Jio Platforms review",
+  "imagePosition": "center",
+  "shortTitle": "Jio Platforms Review",
+  "context": "Company review",
+  "date": "2026",
+  "role": "Presenter",
+  "summary": "A structured strategic and financial review of Jio Platforms.",
+  "keyFacts": [
+    "PESTEL, Porter's Five Forces, SWOT",
+    "5-year financial and stock trends",
+    "Governance and growth drivers"
+  ],
+  "category": "Strategy",
+  "status": "Completed",
+  "caseStudy": {
+    "context": "A company review of Jio Platforms.",
+    "role": "Presenter.",
+    "approach": [
+      "Strategic analysis in three layers: PESTEL → Porter's Five Forces → SWOT.",
+      "Five-year financial and stock-price trends.",
+      "Governance and growth drivers."
+    ],
+    "results": [],
+    "resultsNote": "The review's findings are not published on this page yet. They will be added with the presentation.",
+    "learned": [],
+    "exhibit": {
+      "kind": "frameworks",
+      "steps": [
+        {
+          "name": "PESTEL",
+          "focus": "Macro environment"
+        },
+        {
+          "name": "Porter's Five Forces",
+          "focus": "Industry structure"
+        },
+        {
+          "name": "SWOT",
+          "focus": "Company position"
+        }
+      ]
+    }
+  },
+  "resources": [],
+  "link": {
+    "type": "case-study",
+    "label": "Explore Work"
+  }
+}

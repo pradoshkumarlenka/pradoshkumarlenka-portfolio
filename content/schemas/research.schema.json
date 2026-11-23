@@ -1,0 +1,416 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "type": "object",
+  "properties": {
+    "slug": {
+      "type": "string",
+      "description": "URL slug: /research/<slug>"
+    },
+    "image": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "Card picture (3:2, e.g. 1200 × 800), path inside /public. Decorative artwork, not data. null = no picture."
+    },
+    "imageAlt": {
+      "type": "string",
+      "description": "Describes the picture for screen readers."
+    },
+    "imagePosition": {
+      "type": "string",
+      "description": "Which part of the picture stays in view if it is cropped, e.g. \"center\", \"top\", \"30% 50%\". Default \"center\"."
+    },
+    "title": {
+      "type": "string"
+    },
+    "fullTitle": {
+      "type": "string"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "ongoing",
+        "completed",
+        "published"
+      ],
+      "description": "Research status. Changing it in content.ts updates every badge."
+    },
+    "mode": {
+      "type": "string"
+    },
+    "year": {
+      "type": "string"
+    },
+    "question": {
+      "type": "string"
+    },
+    "data": {
+      "type": "string"
+    },
+    "signals": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "method": {
+      "type": "string"
+    },
+    "findings": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "label": {
+            "type": "string"
+          },
+          "exhibit": {
+            "type": "string",
+            "description": "Exhibit heading, e.g. \"Market size\"."
+          },
+          "before": {
+            "type": "object",
+            "properties": {
+              "label": {
+                "type": "string"
+              },
+              "value": {
+                "type": "number"
+              }
+            },
+            "required": [
+              "label",
+              "value"
+            ],
+            "additionalProperties": false
+          },
+          "after": {
+            "type": "object",
+            "properties": {
+              "label": {
+                "type": "string"
+              },
+              "value": {
+                "type": "number"
+              }
+            },
+            "required": [
+              "label",
+              "value"
+            ],
+            "additionalProperties": false
+          },
+          "unit": {
+            "type": "string",
+            "enum": [
+              "lakh-crore",
+              "percent"
+            ]
+          },
+          "scaleMax": {
+            "type": "number",
+            "description": "Shared scale maximum for the paired bars (bars start at zero)."
+          },
+          "source": {
+            "type": "string",
+            "description": "Named source, or undefined while the citation is pending."
+          }
+        },
+        "required": [
+          "label",
+          "exhibit",
+          "before",
+          "after",
+          "unit",
+          "scaleMax"
+        ],
+        "additionalProperties": false
+      }
+    },
+    "integrity": {
+      "type": "string"
+    },
+    "progress": {
+      "type": "object",
+      "properties": {
+        "completed": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "planned": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "pending": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      },
+      "required": [
+        "completed",
+        "planned",
+        "pending"
+      ],
+      "additionalProperties": false,
+      "description": "What is done, what is designed, what is still pending."
+    },
+    "resources": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "title": {
+            "type": "string"
+          },
+          "description": {
+            "type": "string"
+          },
+          "fileType": {
+            "type": "string",
+            "enum": [
+              "ppt",
+              "pptx",
+              "xls",
+              "xlsx",
+              "pdf",
+              "doc",
+              "docx",
+              "link"
+            ],
+            "description": "File types a project resource can be. \"link\" is an external URL."
+          },
+          "href": {
+            "type": "string",
+            "description": "Local files: a path relative to /public, e.g. \"/projects/dfi-bond-portfolio/model.xlsx\". External links: a full URL starting with https://"
+          },
+          "action": {
+            "type": "string",
+            "enum": [
+              "open",
+              "download",
+              "external"
+            ],
+            "description": "What happens on click:  - \"open\"      opens the file in a new tab (best for PDF)  - \"download\"  downloads the file (best for PPT/XLS/DOC)  - \"external\"  navigates to an outside URL in a new tab"
+          },
+          "label": {
+            "type": "string",
+            "description": "Optional button text. Defaults to \"Open\", \"Download\" or \"Visit\"."
+          },
+          "preview": {
+            "type": "string",
+            "description": "Optional PDF rendering of a PPT/PPTX/DOC file (e.g. produced by `npm run convert:office`), shown in the internal viewer. Without it, those formats offer the original download only."
+          },
+          "downloadHref": {
+            "type": "string",
+            "description": "Optional separate download address (e.g. a database attachment's ?download=1 link)."
+          },
+          "fileName": {
+            "type": "string",
+            "description": "Optional file name to display when `href` does not end in one."
+          }
+        },
+        "required": [
+          "title",
+          "fileType",
+          "href",
+          "action"
+        ],
+        "additionalProperties": false
+      }
+    },
+    "$schema": {
+      "type": "string",
+      "description": "Editor helper that powers hints and error checking. Leave it as it is."
+    },
+    "statusLabels": {
+      "type": "object",
+      "properties": {
+        "ongoing": {
+          "type": "string"
+        },
+        "completed": {
+          "type": "string"
+        },
+        "published": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "ongoing",
+        "completed",
+        "published"
+      ],
+      "additionalProperties": false,
+      "description": "How each research status is written on badges."
+    },
+    "card": {
+      "type": "object",
+      "properties": {
+        "progressLabels": {
+          "type": "object",
+          "properties": {
+            "completed": {
+              "type": "string"
+            },
+            "planned": {
+              "type": "string"
+            },
+            "pending": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "completed",
+            "planned",
+            "pending"
+          ],
+          "additionalProperties": false,
+          "description": "Headings for the three progress columns."
+        },
+        "progressSummary": {
+          "type": "object",
+          "properties": {
+            "completed": {
+              "type": "string"
+            },
+            "planned": {
+              "type": "string"
+            },
+            "pending": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "completed",
+            "planned",
+            "pending"
+          ],
+          "additionalProperties": false,
+          "description": "Short line under each progress heading."
+        },
+        "linkLabel": {
+          "type": "string",
+          "description": "Link to the research-note page."
+        },
+        "footnote": {
+          "type": "string",
+          "description": "Small note under the charts."
+        },
+        "gridCategory": {
+          "type": "string",
+          "description": "Category on its card in the Selected Work grid."
+        },
+        "gridSummary": {
+          "type": "string",
+          "description": "Summary on its card in the Selected Work grid."
+        }
+      },
+      "required": [
+        "progressLabels",
+        "progressSummary",
+        "linkLabel",
+        "footnote",
+        "gridCategory",
+        "gridSummary"
+      ],
+      "additionalProperties": false,
+      "description": "Text on the homepage research card."
+    },
+    "page": {
+      "type": "object",
+      "properties": {
+        "eyebrow": {
+          "type": "string",
+          "description": "Small line above the title, e.g. \"Independent research\"."
+        },
+        "intro": {
+          "type": "string"
+        },
+        "headings": {
+          "type": "object",
+          "properties": {
+            "question": {
+              "type": "string"
+            },
+            "data": {
+              "type": "string"
+            },
+            "evidence": {
+              "type": "string"
+            },
+            "method": {
+              "type": "string"
+            },
+            "status": {
+              "type": "string"
+            },
+            "integrity": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "question",
+            "data",
+            "evidence",
+            "method",
+            "status",
+            "integrity"
+          ],
+          "additionalProperties": false
+        },
+        "signalsLabel": {
+          "type": "string"
+        },
+        "evidenceNote": {
+          "type": "string"
+        },
+        "models": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "description": "Model names shown as steps."
+        }
+      },
+      "required": [
+        "eyebrow",
+        "intro",
+        "headings",
+        "signalsLabel",
+        "evidenceNote",
+        "models"
+      ],
+      "additionalProperties": false,
+      "description": "Text on the research-note page."
+    }
+  },
+  "required": [
+    "card",
+    "data",
+    "findings",
+    "fullTitle",
+    "integrity",
+    "method",
+    "mode",
+    "page",
+    "progress",
+    "question",
+    "resources",
+    "signals",
+    "slug",
+    "status",
+    "statusLabels",
+    "title",
+    "year"
+  ],
+  "additionalProperties": false,
+  "description": "content/research.json — the featured research card and its research-note page.",
+  "definitions": {}
+}

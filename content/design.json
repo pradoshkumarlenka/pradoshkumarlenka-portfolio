@@ -1,0 +1,20 @@
+{
+  "$schema": "./schemas/design.schema.json",
+  "colors": {
+    "violet": "#a56bff",
+    "lavender": "#d5c4ff",
+    "onViolet": "#070a14",
+    "fg": "#f4f2ff",
+    "fgMuted": "#a7adc4",
+    "fgSubtle": "#7c829b",
+    "surface": "#15192b",
+    "surface2": "#1b2036",
+    "positive": "#5fcf9f",
+    "negative": "#f07a86"
+  },
+  "radii": {
+    "control": 10,
+    "card": 16,
+    "panel": 24
+  }
+}

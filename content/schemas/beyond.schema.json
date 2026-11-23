@@ -1,0 +1,82 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "type": "object",
+  "properties": {
+    "$schema": {
+      "type": "string",
+      "description": "Editor helper that powers hints and error checking. Leave it as it is."
+    },
+    "items": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "description": "Stable unique id (lowercase-with-dashes)."
+          },
+          "title": {
+            "type": "string"
+          },
+          "category": {
+            "type": "string",
+            "description": "Small label above the title, e.g. \"Markets\"."
+          },
+          "caption": {
+            "type": "string",
+            "description": "One short, factual sentence."
+          },
+          "image": {
+            "type": "string",
+            "description": "Photo path relative to /public."
+          },
+          "imageAlt": {
+            "type": "string",
+            "description": "Describes the photo for screen readers."
+          },
+          "imagePosition": {
+            "type": "string",
+            "description": "Which part of the photo stays in view when the frame trims it, e.g. \"center\", \"70% 40%\"."
+          }
+        },
+        "required": [
+          "id",
+          "title",
+          "caption",
+          "image",
+          "imageAlt"
+        ],
+        "additionalProperties": false
+      }
+    },
+    "labels": {
+      "type": "object",
+      "properties": {
+        "previous": {
+          "type": "string"
+        },
+        "next": {
+          "type": "string"
+        },
+        "stack": {
+          "type": "string",
+          "description": "Screen-reader name of the stack, e.g. \"Experiences\"."
+        }
+      },
+      "required": [
+        "previous",
+        "next",
+        "stack"
+      ],
+      "additionalProperties": false,
+      "description": "Words used by the stack controls."
+    }
+  },
+  "required": [
+    "items",
+    "labels"
+  ],
+  "additionalProperties": false,
+  "description": "content/beyond.json — Beyond the Classroom photos.",
+  "definitions": {}
+}

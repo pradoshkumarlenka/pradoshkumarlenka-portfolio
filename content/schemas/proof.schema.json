@@ -1,0 +1,76 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "type": "object",
+  "properties": {
+    "$schema": {
+      "type": "string",
+      "description": "Editor helper that powers hints and error checking. Leave it as it is."
+    },
+    "items": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "value": {
+            "type": "string",
+            "description": "Final display text, exactly as shown (also what screen readers get)."
+          },
+          "label": {
+            "type": "string"
+          },
+          "detail": {
+            "type": "string",
+            "description": "Optional one-line clarification under the label."
+          },
+          "count": {
+            "type": "object",
+            "properties": {
+              "to": {
+                "type": "number"
+              },
+              "prefix": {
+                "type": "string"
+              },
+              "suffix": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "to"
+            ],
+            "additionalProperties": false,
+            "description": "Optional count-up for the numeric part of the value: shows prefix + (0 → to) + suffix. Leave out for text or ranks (shown directly)."
+          },
+          "dots": {
+            "type": "object",
+            "properties": {
+              "total": {
+                "type": "number"
+              },
+              "lit": {
+                "type": "number"
+              }
+            },
+            "required": [
+              "total",
+              "lit"
+            ],
+            "additionalProperties": false,
+            "description": "Optional small dot grid at the foot of the card: \"total\" dots, of which \"lit\" light up as the number counts (e.g. 22 of 216). Leave out for none."
+          }
+        },
+        "required": [
+          "value",
+          "label"
+        ],
+        "additionalProperties": false
+      }
+    }
+  },
+  "required": [
+    "items"
+  ],
+  "additionalProperties": false,
+  "description": "content/proof.json — the strip of headline facts under the Hero.",
+  "definitions": {}
+}

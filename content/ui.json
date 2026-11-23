@@ -1,0 +1,85 @@
+{
+  "$schema": "./schemas/ui.schema.json",
+  "navigation": {
+    "openMenu": "Open menu",
+    "closeMenu": "Close menu"
+  },
+  "selectedWork": {
+    "heading": "Selected work",
+    "countLabel": "items",
+    "action": "Explore Work"
+  },
+  "caseStudy": {
+    "backLink": "Back to Research & Selected Work",
+    "nextLabel": "Next",
+    "headings": {
+      "context": "Context",
+      "role": "My role",
+      "approach": "Approach",
+      "results": "Results",
+      "learned": "What I learned"
+    },
+    "positionsLabel": "Paper-trading positions"
+  },
+  "resources": {
+    "heading": "Files & attachments",
+    "preview": "Preview",
+    "downloadOriginal": "Download original",
+    "openLink": "Open link",
+    "opensInNewTab": "(opens in a new tab)",
+    "verify": "Verify",
+    "actions": {
+      "report": "Read Report",
+      "presentation": "View Presentation",
+      "model": "Open Financial Model"
+    }
+  },
+  "viewer": {
+    "close": "Close viewer",
+    "loadingPdf": "Loading document…",
+    "loadingWorkbook": "Reading workbook…",
+    "loadingDocument": "Reading document…",
+    "pdfError": "This PDF could not be displayed ({error}). Use “Download original” instead.",
+    "workbookError": "This workbook could not be read ({error}). Use “Download original” instead.",
+    "documentError": "This document could not be read ({error}). Use “Download original” instead.",
+    "noPreview": "An in-site preview isn’t available for this file yet. Use “Download original” to open it.",
+    "emptySheet": "This worksheet is empty.",
+    "workbookNote": "Read-only preview of the values saved in the workbook. Formulas are not recalculated and macros never run.",
+    "documentNote": "Simplified preview of the Word document (headings, lists and tables kept; exact page layout may differ).",
+    "page": "Page",
+    "slide": "Slide",
+    "of": "of"
+  },
+  "charts": {
+    "rateShock": {
+      "title": "Rate-shock illustration",
+      "badge": "Illustration based on project results",
+      "shiftLabel": "Parallel yield shift",
+      "changeLabel": "Estimated portfolio value change",
+      "footnote": "ΔP/P ≈ −D·Δy + ½·C·Δy², with the project’s modified duration D = {D} and convexity C = {C}. At {bp} bp this gives {result}, matching the documented {documented}. A parallel-shift approximation for illustration only — not a forecast of market prices."
+    },
+    "beta": {
+      "title": "Beta vs. market"
+    },
+    "pairedBars": {
+      "referenceLine": "Dashed line: 100% collection.",
+      "sourcePrefix": "Source:",
+      "sourcePending": "Source citation pending.",
+      "hint": "Hover, tap or tab to a bar for details.",
+      "versus": "{change} vs {other}",
+      "aboveFull": "{gap} pp above full collection",
+      "belowFull": "{gap} pp below full collection",
+      "shareOf": "{share}% of {other}"
+    }
+  },
+  "placeholders": {
+    "imagePending": "Image pending",
+    "portrait": "Portrait",
+    "certificate": "Certificate"
+  },
+  "notFound": {
+    "code": "404",
+    "title": "This page doesn’t exist.",
+    "button": "Back to the homepage"
+  }
+}

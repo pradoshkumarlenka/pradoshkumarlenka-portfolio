@@ -1,0 +1,51 @@
+{
+  "$schema": "./schemas/experience.schema.json",
+  "items": [
+    {
+      "company": "Deloitte Tax Services India Pvt. Ltd. (Deloitte USI)",
+      "title": "Summer Intern – Tax Compliance, US Business Tax Services",
+      "summary": "US federal business tax compliance for corporate and partnership clients, in the Financial Services Group.",
+      "marker": "current",
+      "location": "Hyderabad, India",
+      "start": "May 2026",
+      "end": "June 2026",
+      "outcome": "Pre-Placement Offer",
+      "bullets": [
+        "Selected from the entire USI Tax intern cohort across India to address Global Tax Leadership.",
+        "One of two interns in the batch selected for the Financial Services Group: structured finance and securitization vehicles (CLOs, CDOs, ABS).",
+        "Supported US federal business tax compliance for corporate and partnership clients (Forms 1120 / 1065), including S-corp and C-corp.",
+        "Allocated five client engagements; maintained engagement trackers and tax workpaper templates.",
+        "Internship research: “The Role of Technology in Transforming U.S. Tax Compliance Operations at Deloitte USI Tax.”"
+      ],
+      "tags": [
+        "US tax compliance",
+        "Forms 1120 / 1065",
+        "CLO · CDO · ABS",
+        "Workpapers"
+      ]
+    },
+    {
+      "company": "Metrics4 Analytics Pvt. Ltd.",
+      "title": "Financial Data Analyst & Research Intern – Corporate Actions",
+      "summary": "Corporate-actions research for EventVestor, a data platform serving quantitative hedge funds and asset managers.",
+      "marker": "past",
+      "location": "Hyderabad, India",
+      "start": "October 2025",
+      "end": "March 2026",
+      "outcome": "Converted to a Summer Internship offer",
+      "bullets": [
+        "Researched and validated earnings calls and corporate actions across Indian and South Korean equities for EventVestor, a data platform serving quantitative hedge funds and asset managers.",
+        "Analysed BSE/NSE disclosures under SEBI (LODR) Regulations 29 & 30; applied comparable frameworks to South Korean issuers.",
+        "Extracted point-in-time data from unstructured filings, ran historical data audits and classified M&A and financing events.",
+        "Did all of this alongside full-time PGDM classes."
+      ],
+      "tags": [
+        "SEBI (LODR)",
+        "Corporate actions",
+        "Data audits",
+        "Equities research"
+      ],
+      "note": "Declined the Summer Internship offer to pursue structured finance at Deloitte USI."
+    }
+  ]
+}

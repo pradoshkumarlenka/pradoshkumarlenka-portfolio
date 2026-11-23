@@ -1,0 +1,125 @@
+{
+  "$schema": "./schemas/research.schema.json",
+  "slug": "securitization-x-ray",
+  "title": "Securitization X-Ray",
+  "image": "/images/portfolio/06-securitization-xray-research.png",
+  "imageAlt": "Decorative illustration for the Securitization X-Ray research (artwork, not real data)",
+  "imagePosition": "center",
+  "fullTitle": "Securitization X-Ray: An Evidence-Based Framework for Assessing Stress and Structural Resilience in Indian Securitization Pools",
+  "status": "ongoing",
+  "mode": "Solo",
+  "year": "2026",
+  "question": "Can simple, observable pool indicators warn of stress before it shows up in headline numbers?",
+  "data": "19 CRISIL ABS/MBS pool-performance reports (Jun 2019 – Sep 2026), plus RBI and SEBI disclosures.",
+  "signals": [
+    "MCR (monthly collection ratio)",
+    "ΔMCR (the “X-Ray” signal)",
+    "CCR",
+    "TCR",
+    "Credit-enhancement headroom (CCR–TCR)",
+    "DPD 90+"
+  ],
+  "method": "3 panel-regression models (Baseline → X-Ray → Structural) with transaction fixed effects. Regressions are pending.",
+  "findings": [
+    {
+      "label": "Indian securitization market",
+      "exhibit": "Market size",
+      "before": {
+        "label": "FY19",
+        "value": 1.9
+      },
+      "after": {
+        "label": "FY26",
+        "value": 2.55
+      },
+      "unit": "lakh-crore",
+      "scaleMax": 2.55
+    },
+    {
+      "label": "MFI stress episode, median MCR",
+      "exhibit": "MFI pools",
+      "before": {
+        "label": "Dec 2023",
+        "value": 98
+      },
+      "after": {
+        "label": "Dec 2024",
+        "value": 86
+      },
+      "unit": "percent",
+      "scaleMax": 110,
+      "source": "CRISIL pool-performance reports"
+    },
+    {
+      "label": "Commercial-vehicle recovery, MCR",
+      "exhibit": "CV pools",
+      "before": {
+        "label": "Jun 2021",
+        "value": 85.7
+      },
+      "after": {
+        "label": "Mar 2022",
+        "value": 102.7
+      },
+      "unit": "percent",
+      "scaleMax": 110,
+      "source": "CRISIL pool-performance reports"
+    }
+  ],
+  "integrity": "No fabricated data; every number traced to a named source.",
+  "progress": {
+    "completed": [
+      "Assembled 19 CRISIL ABS/MBS pool-performance reports (Jun 2019 – Sep 2026)",
+      "Mapped market growth, FY19 → FY26",
+      "Documented the MFI stress episode and the CV recovery"
+    ],
+    "planned": [
+      "Three panel-regression specifications: Baseline → X-Ray → Structural",
+      "Transaction fixed effects"
+    ],
+    "pending": [
+      "Regression estimation and results — none are reported until they are run"
+    ]
+  },
+  "resources": [],
+  "statusLabels": {
+    "ongoing": "Ongoing research",
+    "completed": "Completed research",
+    "published": "Published research"
+  },
+  "card": {
+    "progressLabels": {
+      "completed": "Completed",
+      "planned": "Planned",
+      "pending": "Pending"
+    },
+    "progressSummary": {
+      "completed": "Data assembly & market mapping",
+      "planned": "3 panel-regression models",
+      "pending": "Regression results"
+    },
+    "linkLabel": "Read the research note",
+    "footnote": "No fabricated data; every number traced to a named source. No regression results are reported yet.",
+    "gridCategory": "Research",
+    "gridSummary": "An evidence-based framework for spotting stress in Indian securitization pools before it shows up in headline numbers."
+  },
+  "page": {
+    "eyebrow": "Independent research",
+    "intro": "An evidence-based framework to test whether pool-performance and structural indicators flag future stress in Indian securitization pools.",
+    "headings": {
+      "question": "The question",
+      "data": "The data",
+      "evidence": "Evidence so far",
+      "method": "Method (planned)",
+      "status": "Status",
+      "integrity": "Integrity"
+    },
+    "signalsLabel": "Signals studied",
+    "evidenceNote": "Each exhibit compares two documented observations only; no intermediate data points are implied.",
+    "models": [
+      "Baseline",
+      "X-Ray",
+      "Structural"
+    ]
+  }
+}

@@ -1,0 +1,499 @@
+{
+  "$schema": "./schemas/honours.schema.json",
+  "honours": [
+    {
+      "title": "Deloitte USI Pre-Placement Offer",
+      "detail": "Converted the 2026 summer internship into a PPO.",
+      "category": "Professional"
+    },
+    {
+      "title": "Selected to address Deloitte Global Tax Leadership",
+      "detail": "From the entire USI Tax intern cohort across India.",
+      "category": "Professional"
+    },
+    {
+      "title": "Selected for Deloitte's Financial Services Group",
+      "detail": "Only two selected from the India-wide Tax intern batch.",
+      "category": "Professional"
+    },
+    {
+      "title": "4th Rank, PGDM TPS batch",
+      "detail": "Trimesters I & II",
+      "category": "Academic"
+    },
+    {
+      "title": "Section A Topper",
+      "detail": "Trimester I",
+      "category": "Academic"
+    },
+    {
+      "title": "Toastmaster: top 10%",
+      "detail": "22 of 216 selected",
+      "category": "Extracurricular"
+    },
+    {
+      "title": "Metrics4 internship converted to a Summer Internship offer",
+      "detail": "Declined to join Deloitte USI.",
+      "category": "Professional"
+    },
+    {
+      "title": "1st Prize – Case Analysis",
+      "detail": "“Forgetting Claims”, SSIM Induction 2025",
+      "category": "Competition"
+    },
+    {
+      "title": "1st Prize – Culturally Inspired Management",
+      "category": "Competition"
+    },
+    {
+      "title": "2nd Place – Outbound Training",
+      "detail": "As team leader, Team Blue",
+      "category": "Extracurricular"
+    },
+    {
+      "title": "Highest profit (192%) – Food Fest simulation",
+      "detail": "Team result, Induction 2025",
+      "category": "Competition"
+    },
+    {
+      "title": "1st Place – EBSCO research-database quiz",
+      "detail": "Live quiz",
+      "category": "Competition"
+    }
+  ],
+  "archive": [
+    {
+      "title": "1st – Collage Making",
+      "detail": "Induction",
+      "category": "Induction"
+    },
+    {
+      "title": "2nd – Personality Development",
+      "detail": "Induction",
+      "category": "Induction"
+    },
+    {
+      "title": "2nd – “My Roots, My Voice”",
+      "detail": "Induction",
+      "category": "Induction"
+    }
+  ],
+  "certifications": [
+    {
+      "name": "Internship Certificate – Tax",
+      "issuer": "Deloitte Tax Services India Pvt. Ltd.",
+      "year": "2026",
+      "date": "May – Jun 2026",
+      "category": "Professional",
+      "image": null,
+      "download": null,
+      "verifyUrl": null,
+      "filePrivate": true
+    },
+    {
+      "name": "Internship Completion – Corporate Actions Training (PTI)",
+      "issuer": "Metrics4 Analytics Pvt. Ltd.",
+      "year": "2026",
+      "date": "Oct 2025 – Mar 2026",
+      "category": "Professional",
+      "image": "/certificates/metrics4-internship-completion.webp",
+      "source": "certificates-src/metrics4-internship-completion.pdf",
+      "redact": [
+        {
+          "label": "enrolment number",
+          "x": 0.675,
+          "y": 0.312,
+          "w": 0.055,
+          "h": 0.024
+        },
+        {
+          "label": "signature",
+          "x": 0.09,
+          "y": 0.57,
+          "w": 0.22,
+          "h": 0.036
+        }
+      ],
+      "download": "/certificates/originals/metrics4-internship-completion.jpg",
+      "verifyUrl": null
+    },
+    {
+      "name": "McKinsey.org Forward Program",
+      "issuer": "McKinsey.org",
+      "year": "2026",
+      "date": "Jun 2026",
+      "category": "Professional",
+      "image": "/certificates/mckinsey-forward.webp",
+      "source": "certificates-src/mckinsey-forward.pdf",
+      "download": "/certificates/originals/mckinsey-forward.pdf",
+      "verifyUrl": null
+    },
+    {
+      "name": "Internal Audit Job Simulation",
+      "issuer": "Goldman Sachs (job simulation on Forage)",
+      "year": "2025",
+      "date": "Dec 2025",
+      "category": "Finance",
+      "image": "/certificates/goldman-sachs-internal-audit.webp",
+      "source": "certificates-src/goldman-sachs-internal-audit.pdf",
+      "redact": [
+        {
+          "label": "verification codes",
+          "x": 0.065,
+          "y": 0.957,
+          "w": 0.475,
+          "h": 0.027
+        },
+        {
+          "label": "signature",
+          "x": 0.79,
+          "y": 0.73,
+          "w": 0.135,
+          "h": 0.122
+        }
+      ],
+      "download": "/certificates/originals/goldman-sachs-internal-audit.jpg",
+      "verifyUrl": null
+    },
+    {
+      "name": "TallyEssential Level 3 – Taxation & Compliance (Grade A+)",
+      "issuer": "Tally Education & Distribution Services",
+      "year": "2024",
+      "date": "Apr 2024",
+      "category": "Finance",
+      "image": "/certificates/tally-essential-level-3.webp",
+      "source": "certificates-src/tally-essential-level-3.pdf",
+      "redact": [
+        {
+          "label": "parent's name",
+          "x": 0.38,
+          "y": 0.414,
+          "w": 0.24,
+          "h": 0.066
+        },
+        {
+          "label": "certificate number",
+          "x": 0.395,
+          "y": 0.822,
+          "w": 0.22,
+          "h": 0.027
+        },
+        {
+          "label": "signature",
+          "x": 0.755,
+          "y": 0.665,
+          "w": 0.19,
+          "h": 0.048
+        }
+      ],
+      "download": "/certificates/originals/tally-essential-level-3.jpg",
+      "verifyUrl": null
+    },
+    {
+      "name": "Study Tour – Careers & Regulatory Aspects in Securities Markets (Participation)",
+      "issuer": "National Institute of Securities Markets (NISM)",
+      "year": "2025",
+      "date": "Nov 2025",
+      "category": "Finance",
+      "image": "/certificates/nism-study-tour.webp",
+      "source": "certificates-src/nism-study-tour.pdf",
+      "redact": [
+        {
+          "label": "signature",
+          "x": 0.195,
+          "y": 0.735,
+          "w": 0.105,
+          "h": 0.09
+        },
+        {
+          "label": "signature",
+          "x": 0.675,
+          "y": 0.745,
+          "w": 0.13,
+          "h": 0.075
+        }
+      ],
+      "download": "/certificates/originals/nism-study-tour.jpg",
+      "verifyUrl": null
+    },
+    {
+      "name": "IBM SkillsBuild – Customer Engagement: Problem Solving and Process Controls",
+      "issuer": "IBM SkillsBuild",
+      "year": "2026",
+      "date": "Jan 2026",
+      "category": "Professional",
+      "image": "/certificates/ibm-customer-engagement-problem-solving.webp",
+      "source": "certificates-src/ibm-customer-engagement-problem-solving.pdf",
+      "download": "/certificates/originals/ibm-customer-engagement-problem-solving.pdf",
+      "verifyUrl": "https://www.credly.com/badges/7ef9cd3b-39da-4850-8fe8-85db8e34ff89"
+    },
+    {
+      "name": "IBM SkillsBuild – Customer Engagement: Communication and Personality Dynamics",
+      "issuer": "IBM SkillsBuild",
+      "year": "2026",
+      "date": "Jan 2026",
+      "category": "Professional",
+      "image": "/certificates/ibm-customer-engagement-communication.webp",
+      "source": "certificates-src/ibm-customer-engagement-communication.pdf",
+      "download": "/certificates/originals/ibm-customer-engagement-communication.pdf",
+      "verifyUrl": "https://www.credly.com/badges/bce838b8-62dd-462f-b82d-23d852c56189"
+    },
+    {
+      "name": "IBM SkillsBuild – Artificial Intelligence Fundamentals",
+      "issuer": "IBM SkillsBuild",
+      "year": "2026",
+      "date": "Jan 2026",
+      "category": "Analytics",
+      "image": "/certificates/ibm-ai-fundamentals.webp",
+      "source": "certificates-src/ibm-ai-fundamentals.pdf",
+      "download": "/certificates/originals/ibm-ai-fundamentals.pdf",
+      "verifyUrl": "https://www.credly.com/badges/6700a2a6-4cb6-4dda-9073-715b3685de32"
+    },
+    {
+      "name": "1st Prize – Case Analysis Competition",
+      "issuer": "Siva Sivani Institute of Management · Shubharambh induction 2025",
+      "year": "2025",
+      "date": "Jul 2025",
+      "category": "Campus",
+      "image": "/certificates/ssim-case-analysis.webp",
+      "source": "certificates-src/ssim-case-analysis.pdf",
+      "redact": [
+        {
+          "label": "signature",
+          "x": 0.22,
+          "y": 0.73,
+          "w": 0.17,
+          "h": 0.075
+        },
+        {
+          "label": "signature",
+          "x": 0.645,
+          "y": 0.705,
+          "w": 0.135,
+          "h": 0.09
+        }
+      ],
+      "download": "/certificates/originals/ssim-case-analysis.jpg",
+      "verifyUrl": null
+    },
+    {
+      "name": "1st Position – Culturally Inspired Management",
+      "issuer": "Siva Sivani Institute of Management · Shubharambh induction 2025",
+      "year": "2025",
+      "date": "Jul 2025",
+      "category": "Campus",
+      "image": "/certificates/ssim-culturally-inspired-management.webp",
+      "source": "certificates-src/ssim-culturally-inspired-management.pdf",
+      "redact": [
+        {
+          "label": "signature",
+          "x": 0.195,
+          "y": 0.715,
+          "w": 0.165,
+          "h": 0.085
+        },
+        {
+          "label": "signature",
+          "x": 0.67,
+          "y": 0.715,
+          "w": 0.09,
+          "h": 0.08
+        }
+      ],
+      "download": "/certificates/originals/ssim-culturally-inspired-management.jpg",
+      "verifyUrl": null
+    },
+    {
+      "name": "1st Position – Collage Making Competition",
+      "issuer": "Siva Sivani Institute of Management · Shubharambh induction 2025",
+      "year": "2025",
+      "date": "Jul 2025",
+      "category": "Campus",
+      "image": "/certificates/ssim-collage-making.webp",
+      "source": "certificates-src/ssim-collage-making-cleaned.jpg",
+      "redact": [
+        {
+          "label": "signature",
+          "x": 0.14,
+          "y": 0.75,
+          "w": 0.175,
+          "h": 0.09
+        },
+        {
+          "label": "signature",
+          "x": 0.46,
+          "y": 0.745,
+          "w": 0.11,
+          "h": 0.095
+        },
+        {
+          "label": "signature",
+          "x": 0.71,
+          "y": 0.75,
+          "w": 0.125,
+          "h": 0.08
+        }
+      ],
+      "download": "/certificates/originals/ssim-collage-making.jpg",
+      "verifyUrl": null
+    },
+    {
+      "name": "2nd Position – Personality Development",
+      "issuer": "Siva Sivani Institute of Management · Shubharambh induction 2025",
+      "year": "2025",
+      "date": "Jul 2025",
+      "category": "Campus",
+      "image": "/certificates/ssim-personality-development.webp",
+      "source": "certificates-src/ssim-personality-development.pdf",
+      "redact": [
+        {
+          "label": "signature",
+          "x": 0.435,
+          "y": 0.71,
+          "w": 0.17,
+          "h": 0.085
+        }
+      ],
+      "download": "/certificates/originals/ssim-personality-development.jpg",
+      "verifyUrl": null
+    },
+    {
+      "name": "2nd Position – “My Roots, My Voice”",
+      "issuer": "Siva Sivani Institute of Management · Shubharambh induction 2025",
+      "year": "2025",
+      "date": "Jul 2025",
+      "category": "Campus",
+      "image": "/certificates/ssim-my-roots-my-voice.webp",
+      "source": "certificates-src/ssim-my-roots-my-voice.pdf",
+      "redact": [
+        {
+          "label": "signature",
+          "x": 0.195,
+          "y": 0.71,
+          "w": 0.17,
+          "h": 0.09
+        },
+        {
+          "label": "signature",
+          "x": 0.665,
+          "y": 0.71,
+          "w": 0.115,
+          "h": 0.085
+        }
+      ],
+      "download": "/certificates/originals/ssim-my-roots-my-voice.jpg",
+      "verifyUrl": null
+    },
+    {
+      "name": "Certificate of Achievement – Food Fest (Profits)",
+      "issuer": "Siva Sivani Institute of Management · Shubharambh induction 2025",
+      "year": "2025",
+      "date": "Jul 2025",
+      "category": "Campus",
+      "image": "/certificates/ssim-food-fest.webp",
+      "source": "certificates-src/ssim-food-fest.pdf",
+      "redact": [
+        {
+          "label": "signature",
+          "x": 0.195,
+          "y": 0.715,
+          "w": 0.17,
+          "h": 0.085
+        },
+        {
+          "label": "signature",
+          "x": 0.66,
+          "y": 0.715,
+          "w": 0.095,
+          "h": 0.09
+        }
+      ],
+      "download": "/certificates/originals/ssim-food-fest.jpg",
+      "verifyUrl": null
+    },
+    {
+      "name": "Advanced Certificate Course in FinTech",
+      "issuer": "BFSI Board, The Institute of Cost Accountants of India (ICMAI)",
+      "year": "2026",
+      "category": "Finance",
+      "image": null,
+      "download": null,
+      "verifyUrl": null,
+      "visible": false
+    }
+  ],
+  "education": [
+    {
+      "qualification": "PGDM – Finance",
+      "detail": "Triple specialisation: Finance (major) · Banking (minor) · Business Analytics (sectoral)",
+      "institute": "Siva Sivani Institute of Management, Hyderabad",
+      "board": "AICTE-approved",
+      "years": "2027",
+      "score": "8.21/10",
+      "scoreNote": "*",
+      "badges": [
+        "4th Rank, Trimesters I & II",
+        "Section A Topper, Trimester I"
+      ]
+    },
+    {
+      "qualification": "B.Com.",
+      "institute": "Avinash College of Commerce, Hyderabad",
+      "board": "Osmania University",
+      "years": "2025",
+      "score": "8.91/10"
+    },
+    {
+      "qualification": "Class XII",
+      "institute": "Sri Medha V Junior College (Commerce)",
+      "board": "TSBIE",
+      "years": "2022",
+      "score": "79.5%"
+    },
+    {
+      "qualification": "Class X",
+      "institute": "S R Digi High School",
+      "board": "TS SSC Board",
+      "years": "2020",
+      "score": "10/10"
+    }
+  ],
+  "educationNotes": [
+    "* Cumulative, Trimesters I–III. Year shown is the completion year (PGDM: expected)."
+  ],
+  "labels": {
+    "tabs": {
+      "honours": "Honours",
+      "certifications": "Certifications",
+      "education": "Education"
+    },
+    "archiveShow": "View all honours",
+    "archiveHide": "Show fewer",
+    "previous": "Previous honour",
+    "next": "Next honour",
+    "position": "{n} of {total}",
+    "filters": {
+      "all": "All",
+      "finance": "Finance",
+      "analytics": "Analytics",
+      "professional": "Professional",
+      "campus": "Campus"
+    },
+    "emptyFilter": "No certificates in this category yet.",
+    "openCertificate": "View certificate",
+    "certificatePending": "Certificate file to be added",
+    "verify": "Verify",
+    "download": "Download",
+    "fit": "Fit to screen",
+    "actualSize": "Actual size",
+    "imageError": "This certificate image could not be loaded. Use “Download” instead.",
+    "tableHeadings": {
+      "qualification": "Qualification",
+      "institute": "Institute",
+      "board": "Board / University",
+      "year": "Year",
+      "score": "CGPA / %"
+    },
+    "certificatePrivate": "Document kept private"
+  }
+}

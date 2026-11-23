@@ -1,0 +1,308 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "global": {
+      "type": "object",
+      "properties": {
+        "smoothScrollLerp": {
+          "type": "number",
+          "description": "Lenis smooth scrolling interpolation (0.05 smooth … 0.3 snappy). Read from config."
+        }
+      },
+      "required": [
+        "smoothScrollLerp"
+      ],
+      "additionalProperties": false,
+      "description": "Global switches."
+    },
+    "reveal": {
+      "type": "object",
+      "properties": {
+        "base": {
+          "type": "object",
+          "properties": {
+            "distance": {
+              "type": "number"
+            },
+            "duration": {
+              "type": "number"
+            },
+            "blur": {
+              "type": "number"
+            },
+            "threshold": {
+              "type": "number"
+            },
+            "ease": {
+              "type": "string",
+              "enum": [
+                "premium",
+                "power1.out",
+                "power2.out",
+                "power3.out",
+                "linear"
+              ],
+              "description": "ANIMATION CONFIGURATION — typed parameters for the site's motion.\n\nANIMATION_DEFAULTS holds the exact values the site uses today, so behaviour is unchanged. Groups marked \"read from config\" are already consumed by their components through useAnimationConfig() / getAnimationConfig(); the others document the current values and are wired when the Animation Studio arrives.\n\nEvery value carries a safe range (ANIMATION_LIMITS) for future editors. Reduced-motion preferences always override these settings."
+            }
+          },
+          "required": [
+            "distance",
+            "duration",
+            "blur",
+            "threshold",
+            "ease"
+          ],
+          "additionalProperties": false,
+          "description": "Defaults for every <Reveal>."
+        },
+        "section": {
+          "type": "object",
+          "properties": {
+            "distance": {
+              "type": "number"
+            },
+            "duration": {
+              "type": "number"
+            },
+            "blur": {
+              "type": "number"
+            },
+            "stagger": {
+              "type": "number"
+            }
+          },
+          "required": [
+            "distance",
+            "duration",
+            "blur",
+            "stagger"
+          ],
+          "additionalProperties": false,
+          "description": "The restrained preset used inside sections (cards, case-study blocks)."
+        }
+      },
+      "required": [
+        "base",
+        "section"
+      ],
+      "additionalProperties": false,
+      "description": "Scroll reveals (AnimatedContent). Read from config."
+    },
+    "hero": {
+      "type": "object",
+      "properties": {
+        "nameIntroSeconds": {
+          "type": "number",
+          "description": "TechText name intro length (s). Read from config."
+        },
+        "portraitEntranceMs": {
+          "type": "number",
+          "description": "Delay before the halftone portrait layer starts (ms). Read from config."
+        }
+      },
+      "required": [
+        "nameIntroSeconds",
+        "portraitEntranceMs"
+      ],
+      "additionalProperties": false,
+      "description": "Hero."
+    },
+    "cursorTrail": {
+      "type": "object",
+      "properties": {
+        "enabled": {
+          "type": "boolean"
+        },
+        "startAfterMs": {
+          "type": "number"
+        },
+        "color": {
+          "type": "string"
+        },
+        "secondaryColor": {
+          "type": "string"
+        },
+        "intensity": {
+          "type": "number"
+        },
+        "trailWidth": {
+          "type": "number"
+        },
+        "linger": {
+          "type": "number"
+        },
+        "glow": {
+          "type": "number"
+        },
+        "hotspot": {
+          "type": "number"
+        },
+        "followSpeed": {
+          "type": "number"
+        },
+        "clickBurst": {
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "enabled",
+        "startAfterMs",
+        "color",
+        "secondaryColor",
+        "intensity",
+        "trailWidth",
+        "linger",
+        "glow",
+        "hotspot",
+        "followSpeed",
+        "clickBurst"
+      ],
+      "additionalProperties": false,
+      "description": "Cursor light trail (GlowCursor). Read from config."
+    },
+    "proofBar": {
+      "type": "object",
+      "properties": {
+        "rollSeconds": {
+          "type": "number"
+        }
+      },
+      "required": [
+        "rollSeconds"
+      ],
+      "additionalProperties": false,
+      "description": "Proof Bar counters. Read from config."
+    },
+    "honoursCarousel": {
+      "type": "object",
+      "properties": {
+        "stepPx": {
+          "type": "number"
+        },
+        "halfHeightPx": {
+          "type": "number"
+        }
+      },
+      "required": [
+        "stepPx",
+        "halfHeightPx"
+      ],
+      "additionalProperties": false,
+      "description": "Honours 3D carousel (pinned scroll). Read from config."
+    },
+    "certificateWall": {
+      "type": "object",
+      "properties": {
+        "filterFadeMs": {
+          "type": "number"
+        }
+      },
+      "required": [
+        "filterFadeMs"
+      ],
+      "additionalProperties": false,
+      "description": "Certificate wall filter transition. Read from config."
+    },
+    "beyondCarousel": {
+      "type": "object",
+      "properties": {
+        "stepPx": {
+          "type": "number"
+        },
+        "stageHeightPx": {
+          "type": "number"
+        },
+        "gap": {
+          "type": "number"
+        },
+        "radius": {
+          "type": "number"
+        },
+        "dispersion": {
+          "type": "number"
+        },
+        "squeeze": {
+          "type": "number"
+        },
+        "desktop": {
+          "type": "object",
+          "properties": {
+            "preset": {
+              "type": "string",
+              "enum": [
+                "liquid",
+                "ribbon",
+                "vortex",
+                "arch"
+              ]
+            },
+            "cardHeight": {
+              "type": "number"
+            }
+          },
+          "required": [
+            "preset",
+            "cardHeight"
+          ],
+          "additionalProperties": false
+        },
+        "mobile": {
+          "type": "object",
+          "properties": {
+            "preset": {
+              "type": "string",
+              "enum": [
+                "liquid",
+                "ribbon",
+                "vortex",
+                "arch"
+              ]
+            },
+            "cardHeight": {
+              "type": "number"
+            },
+            "bend": {
+              "type": "number"
+            }
+          },
+          "required": [
+            "preset",
+            "cardHeight",
+            "bend"
+          ],
+          "additionalProperties": false
+        }
+      },
+      "required": [
+        "stepPx",
+        "stageHeightPx",
+        "gap",
+        "radius",
+        "dispersion",
+        "squeeze",
+        "desktop",
+        "mobile"
+      ],
+      "additionalProperties": false,
+      "description": "Beyond the Classroom carousel (pinned scroll + lens). Read from config."
+    },
+    "$schema": {
+      "type": "string",
+      "description": "Editor helper that powers hints and error checking. Leave it as it is."
+    }
+  },
+  "required": [
+    "beyondCarousel",
+    "certificateWall",
+    "cursorTrail",
+    "global",
+    "hero",
+    "honoursCarousel",
+    "proofBar",
+    "reveal"
+  ],
+  "description": "content/animation.json — motion settings the site reads today. Every number has a safe range; reduced-motion preferences always win.",
+  "definitions": {}
+}

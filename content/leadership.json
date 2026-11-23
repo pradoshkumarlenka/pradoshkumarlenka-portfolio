@@ -1,0 +1,74 @@
+{
+  "$schema": "./schemas/leadership.schema.json",
+  "items": [
+    {
+      "role": "Toastmaster",
+      "context": "TEMC Communication Programme · Trimester III",
+      "detail": "Classmates chose their Toastmaster and teams were capped at 10; mine filled to the full 10. Coached public speaking, group discussions, mock interviews and academics.",
+      "impact": "Every member of the team secured an internship.",
+      "stats": [
+        {
+          "value": "22 of 216",
+          "label": "selected (top 10%)"
+        },
+        {
+          "value": "10",
+          "label": "member team, full"
+        },
+        {
+          "value": "30",
+          "label": "sessions led, Mar–Apr 2026"
+        }
+      ],
+      "size": "large"
+    },
+    {
+      "role": "Event Lead, Bulls & Bears · Campus Ambassador, Student Tribe",
+      "context": "Samanvay 2026",
+      "detail": "Ran the Mock the Market trading-simulation contest at the management fest.",
+      "impact": "As Student Tribe's campus ambassador, drove the fest's digital outreach.",
+      "metric": "100K+",
+      "metricLabel": "views on the fest's digital outreach",
+      "size": "medium"
+    },
+    {
+      "role": "NISM & NSE industry immersion",
+      "context": "Mumbai · Nov 2025",
+      "detail": "Spearheaded travel and on-ground arrangements for the visit to NISM and NSE, Mumbai.",
+      "impact": "Kept a 50+ student group on schedule across both institutions.",
+      "metric": "50+",
+      "metricLabel": "students",
+      "size": "medium"
+    },
+    {
+      "role": "Peer Mentor",
+      "context": "Formal SSIM role · Trimester II",
+      "detail": "Guided mentees on academics and overall development.",
+      "metric": "5",
+      "metricLabel": "mentees",
+      "size": "small"
+    },
+    {
+      "role": "Chair, UN Council (SDG 4)",
+      "context": "SSIM Model UN",
+      "detail": "Chaired the council on Quality Education; also served as Nigeria's delegate (SDG 7).",
+      "size": "small"
+    },
+    {
+      "role": "Team Leader, Team Blue",
+      "context": "Outbound Training · Aug 2025",
+      "detail": "Led the team through the outbound training programme.",
+      "metric": "2nd",
+      "metricLabel": "overall (team)",
+      "size": "small"
+    },
+    {
+      "role": "Food Fest business simulation",
+      "context": "Induction 2025",
+      "detail": "Led the team to the highest profit in the live business simulation.",
+      "metric": "192%",
+      "metricLabel": "profit, highest (team)",
+      "size": "small"
+    }
+  ]
+}

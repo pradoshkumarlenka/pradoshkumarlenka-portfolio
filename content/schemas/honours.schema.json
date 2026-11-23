@@ -1,0 +1,370 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "type": "object",
+  "properties": {
+    "$schema": {
+      "type": "string",
+      "description": "Editor helper that powers hints and error checking. Leave it as it is."
+    },
+    "honours": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "title": {
+            "type": "string"
+          },
+          "detail": {
+            "type": "string"
+          },
+          "category": {
+            "type": "string",
+            "description": "Kind of recognition, shown as a small label, e.g. \"Professional\", \"Academic\", \"Competition\", \"Extracurricular\"."
+          }
+        },
+        "required": [
+          "title"
+        ],
+        "additionalProperties": false
+      },
+      "description": "Main list, most impressive first."
+    },
+    "archive": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "title": {
+            "type": "string"
+          },
+          "detail": {
+            "type": "string"
+          },
+          "category": {
+            "type": "string",
+            "description": "Kind of recognition, shown as a small label, e.g. \"Professional\", \"Academic\", \"Competition\", \"Extracurricular\"."
+          }
+        },
+        "required": [
+          "title"
+        ],
+        "additionalProperties": false
+      },
+      "description": "Smaller prizes behind \"View all honours\"."
+    },
+    "certifications": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string"
+          },
+          "issuer": {
+            "type": "string"
+          },
+          "year": {
+            "type": "string"
+          },
+          "date": {
+            "type": "string",
+            "description": "Exact date shown on the card when known, e.g. \"Jun 2026\"."
+          },
+          "category": {
+            "type": "string",
+            "enum": [
+              "Finance",
+              "Analytics",
+              "Professional",
+              "Campus"
+            ]
+          },
+          "image": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "description": "Image path relative to /public (e.g. \"/certificates/fintech.webp\"), or null if not supplied yet."
+          },
+          "source": {
+            "type": "string",
+            "description": "Original PDF, JPG or PNG in /certificates-src (never published). `npm run certificates` renders it into \"image\"."
+          },
+          "redact": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "label": {
+                  "type": "string",
+                  "description": "What is hidden, e.g. \"signature\" or \"certificate number\"."
+                },
+                "x": {
+                  "type": "number"
+                },
+                "y": {
+                  "type": "number"
+                },
+                "w": {
+                  "type": "number"
+                },
+                "h": {
+                  "type": "number"
+                }
+              },
+              "required": [
+                "label",
+                "x",
+                "y",
+                "w",
+                "h"
+              ],
+              "additionalProperties": false,
+              "description": "An area of a certificate that is blurred before publishing (fractions of the page, from the top-left)."
+            },
+            "description": "Private areas blurred when rendering (signatures, ID numbers, codes, family names)."
+          },
+          "download": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "description": "File offered by \"Download\" (inside /public), or null for none."
+          },
+          "verifyUrl": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "description": "Credly or issuer verification URL, or null. Only real links."
+          },
+          "filePrivate": {
+            "type": "boolean",
+            "description": "true = a real certificate whose document is deliberately not published (card shows title and dates only)."
+          },
+          "visible": {
+            "type": "boolean",
+            "description": "false hides the card (e.g. until the certificate file and details are supplied)."
+          }
+        },
+        "required": [
+          "name",
+          "issuer",
+          "year",
+          "category",
+          "image",
+          "verifyUrl"
+        ],
+        "additionalProperties": false
+      }
+    },
+    "education": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "qualification": {
+            "type": "string"
+          },
+          "detail": {
+            "type": "string",
+            "description": "Optional small line under the qualification (e.g. specialisation)."
+          },
+          "institute": {
+            "type": "string"
+          },
+          "board": {
+            "type": "string"
+          },
+          "years": {
+            "type": "string"
+          },
+          "score": {
+            "type": "string"
+          },
+          "scoreNote": {
+            "type": "string",
+            "description": "Optional footnote marker explained in \"notes\", e.g. \"*\"."
+          },
+          "badges": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        },
+        "required": [
+          "qualification",
+          "institute",
+          "board",
+          "years",
+          "score"
+        ],
+        "additionalProperties": false
+      }
+    },
+    "educationNotes": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "Footnotes under the education table."
+    },
+    "labels": {
+      "type": "object",
+      "properties": {
+        "tabs": {
+          "type": "object",
+          "properties": {
+            "honours": {
+              "type": "string"
+            },
+            "certifications": {
+              "type": "string"
+            },
+            "education": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "honours",
+            "certifications",
+            "education"
+          ],
+          "additionalProperties": false
+        },
+        "archiveShow": {
+          "type": "string"
+        },
+        "archiveHide": {
+          "type": "string"
+        },
+        "previous": {
+          "type": "string"
+        },
+        "next": {
+          "type": "string"
+        },
+        "position": {
+          "type": "string",
+          "description": "\"{n} of {total}\""
+        },
+        "filters": {
+          "type": "object",
+          "properties": {
+            "all": {
+              "type": "string"
+            },
+            "finance": {
+              "type": "string"
+            },
+            "analytics": {
+              "type": "string"
+            },
+            "professional": {
+              "type": "string"
+            },
+            "campus": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "all",
+            "finance",
+            "analytics",
+            "professional",
+            "campus"
+          ],
+          "additionalProperties": false
+        },
+        "emptyFilter": {
+          "type": "string"
+        },
+        "openCertificate": {
+          "type": "string"
+        },
+        "certificatePending": {
+          "type": "string"
+        },
+        "certificatePrivate": {
+          "type": "string",
+          "description": "Shown on a card whose document is kept private."
+        },
+        "verify": {
+          "type": "string"
+        },
+        "download": {
+          "type": "string"
+        },
+        "fit": {
+          "type": "string"
+        },
+        "actualSize": {
+          "type": "string"
+        },
+        "imageError": {
+          "type": "string"
+        },
+        "tableHeadings": {
+          "type": "object",
+          "properties": {
+            "qualification": {
+              "type": "string"
+            },
+            "institute": {
+              "type": "string"
+            },
+            "board": {
+              "type": "string"
+            },
+            "year": {
+              "type": "string"
+            },
+            "score": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "qualification",
+            "institute",
+            "board",
+            "year",
+            "score"
+          ],
+          "additionalProperties": false
+        }
+      },
+      "required": [
+        "tabs",
+        "archiveShow",
+        "archiveHide",
+        "previous",
+        "next",
+        "position",
+        "filters",
+        "emptyFilter",
+        "openCertificate",
+        "certificatePending",
+        "certificatePrivate",
+        "verify",
+        "download",
+        "fit",
+        "actualSize",
+        "imageError",
+        "tableHeadings"
+      ],
+      "additionalProperties": false,
+      "description": "Words used in this section."
+    }
+  },
+  "required": [
+    "honours",
+    "archive",
+    "certifications",
+    "education",
+    "labels"
+  ],
+  "additionalProperties": false,
+  "description": "content/honours.json — honours, certificates and education.",
+  "definitions": {}
+}

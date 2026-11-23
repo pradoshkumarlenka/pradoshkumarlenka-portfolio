@@ -1,0 +1,193 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "type": "object",
+  "properties": {
+    "$schema": {
+      "type": "string",
+      "description": "Editor helper that powers hints and error checking. Leave it as it is."
+    },
+    "person": {
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": "string",
+          "description": "Full name (used for the page heading and screen readers)."
+        },
+        "firstNames": {
+          "type": "string",
+          "description": "First line of the big Hero name."
+        },
+        "highlightedName": {
+          "type": "string",
+          "description": "Second line of the big Hero name (shown in lavender italics)."
+        },
+        "monogram": {
+          "type": "string",
+          "description": "Short monogram in the top-left of the menu bar."
+        },
+        "pronouns": {
+          "type": "string"
+        },
+        "location": {
+          "type": "string",
+          "description": "Shown under the Hero statement."
+        },
+        "origin": {
+          "type": "string"
+        },
+        "status": {
+          "type": "string"
+        },
+        "statusLine": {
+          "type": "string",
+          "description": "Green label above the name."
+        },
+        "tagline": {
+          "type": "string",
+          "description": "Specialisation line under the statement."
+        },
+        "brandLine": {
+          "type": "string",
+          "description": "Main statement under the name."
+        },
+        "availability": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "name",
+        "firstNames",
+        "highlightedName",
+        "monogram",
+        "pronouns",
+        "location",
+        "origin",
+        "status",
+        "statusLine",
+        "tagline",
+        "brandLine",
+        "availability"
+      ],
+      "additionalProperties": false
+    },
+    "introVideo": {
+      "type": "object",
+      "properties": {
+        "src": {
+          "type": "string",
+          "description": "Video file inside /public, e.g. \"/videos/pradosh-introduction.mp4\" (MP4, H.264 + AAC)."
+        },
+        "poster": {
+          "type": "string",
+          "description": "Still image shown before playing (a real frame from the video)."
+        },
+        "backdrop": {
+          "type": "string",
+          "description": "Blurred image filling the sides of the wide frame around a portrait video."
+        },
+        "orientation": {
+          "type": "string",
+          "enum": [
+            "portrait",
+            "landscape"
+          ],
+          "description": "\"portrait\" (9:16, e.g. a phone video) or \"landscape\" (16:9)."
+        },
+        "captions": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "Caption file (.vtt) inside /public, or null."
+        },
+        "duration": {
+          "type": "string",
+          "description": "Shown on the poster, e.g. \"1:08\"."
+        },
+        "watchLabel": {
+          "type": "string",
+          "description": "Hero link text, e.g. \"Watch introduction\"."
+        },
+        "playLabel": {
+          "type": "string",
+          "description": "Play button's accessible name."
+        },
+        "description": {
+          "type": "string",
+          "description": "One sentence under the section heading."
+        },
+        "missing": {
+          "type": "string",
+          "description": "Shown if the video file is missing."
+        }
+      },
+      "required": [
+        "src",
+        "poster",
+        "orientation",
+        "captions",
+        "duration",
+        "watchLabel",
+        "playLabel",
+        "description",
+        "missing"
+      ],
+      "additionalProperties": false,
+      "description": "The \"Meet Pradosh\" introduction video (hero.json → introVideo)."
+    },
+    "buttons": {
+      "type": "object",
+      "properties": {
+        "primary": {
+          "type": "string",
+          "description": "Main button (scrolls to Research & Selected Work)."
+        },
+        "secondary": {
+          "type": "string",
+          "description": "Résumé download button."
+        },
+        "resumePendingNote": {
+          "type": "string",
+          "description": "Shown on the résumé button while the PDF is missing."
+        }
+      },
+      "required": [
+        "primary",
+        "secondary",
+        "resumePendingNote"
+      ],
+      "additionalProperties": false
+    },
+    "portrait": {
+      "type": "object",
+      "properties": {
+        "image": {
+          "type": "string",
+          "description": "Photo path inside the /public folder, e.g. \"/photos/headshot.webp\"."
+        },
+        "alt": {
+          "type": "string",
+          "description": "Description of the photo for screen readers."
+        },
+        "backdropColor": {
+          "type": "string",
+          "description": "The plain background colour of the photo (hex, e.g. \"#8b868a\"). It is left out of the dotted print. Update it if you change the photo."
+        }
+      },
+      "required": [
+        "image",
+        "alt",
+        "backdropColor"
+      ],
+      "additionalProperties": false
+    }
+  },
+  "required": [
+    "person",
+    "introVideo",
+    "buttons",
+    "portrait"
+  ],
+  "additionalProperties": false,
+  "definitions": {}
+}
