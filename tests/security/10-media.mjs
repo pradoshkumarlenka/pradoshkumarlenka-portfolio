@@ -147,6 +147,8 @@ try {
   t.rec("A library file's storage object cannot be deleted while its record exists (even by the admin)", after === 200, `delete ${adminDel.status}, object ${after}`);
 
   // ---- F. browser: upload, reject fakes, edit alt, delete
+  const pubState = async () => JSON.stringify(await q("select key, version, content_hash from public.content_published order by 1"));
+  const pubStart = await pubState();
   const ctx = await b.createBrowserContext();
   const p = await ctx.newPage();
   const errs = [];
@@ -177,6 +179,34 @@ try {
   await p.evaluate((id) => { const card = document.getElementById(`a-${id}`).closest("li"); [...card.querySelectorAll("button")].find((x) => x.textContent.trim() === "Save").click(); }, row.id);
   const altSaved = await until(async () => ((await q("select alt from public.media where id=$1", [row.id]))[0]?.alt === "zztest green rectangle"), 40);
   t.rec("Alt text can be edited and saved", Boolean(altSaved));
+
+  // Location, status and Copy path, checked against the database row. Uploading publishes nothing,
+  // and a copied path gives visitors nothing while the file is unused and unapproved.
+  const sitePath = `/media/${row.id}/${row.path.split("/").pop()}`;
+  await ctx.overridePermissions(SITE, ["clipboard-read", "clipboard-write"]);
+  const cardInfo = (id) => p.evaluate((i) => {
+    const li = document.getElementById(`a-${i}`).closest("li");
+    const q1 = (s) => li.querySelector(s)?.textContent.trim();
+    return { bucket: q1("[data-bucket]"), storage: q1("[data-storage-path]"), site: q1("[data-site-path]"), usage: li.querySelector("[data-usage]")?.dataset.usage, review: li.querySelector("[data-review]")?.dataset.review,
+      uploaded: /Uploaded \d{1,2} \w{3} \d{4}/.test(li.textContent), refs: [...li.querySelectorAll("[data-media-usage] a")].map((a) => `${a.getAttribute("href")}|${a.parentElement.textContent.trim()}`) };
+  }, id);
+  const fresh = await cardInfo(row.id);
+  // Headless Chrome cannot read the clipboard back: record what the page writes to it.
+  await p.evaluate(() => { window.__copied = []; const w = navigator.clipboard.writeText.bind(navigator.clipboard); navigator.clipboard.writeText = (t) => { window.__copied.push(t); return w(t).catch(() => {}); }; });
+  await p.evaluate((id) => [...document.getElementById(`a-${id}`).closest("li").querySelectorAll("button")].find((x) => x.textContent.trim() === "Copy path").click(), row.id);
+  const copied = await until(async () => p.evaluate((id) => { const li = document.getElementById(`a-${id}`).closest("li"); return window.__copied.length && /Site path copied/.test(li.textContent) ? window.__copied[0] : null; }, row.id), 10);
+  const visitorCopy = (await fetch(SITE + sitePath)).status;
+  t.rec("Each file shows its private bucket, exact storage path and site path, upload time and status (unused, review pending); Copy path copies the site path",
+    fresh.bucket === "site-media" && fresh.storage === row.path && fresh.site === sitePath && fresh.usage === "unused" && fresh.review === "pending" && fresh.uploaded && copied === sitePath, JSON.stringify({ usage: fresh.usage, review: fresh.review, uploaded: fresh.uploaded, storageOk: fresh.storage === row.path, siteOk: fresh.site === sitePath, copied }));
+  t.rec("Uploading publishes nothing, and the copied path gives visitors nothing (404) while the file is unused", (await pubState()) === pubStart && visitorCopy === 404, `visitor ${visitorCopy}`);
+  const filterShows = async (labelText) => {
+    await p.evaluate((l) => [...document.querySelectorAll("[role=radiogroup][aria-label='Show files'] button")].find((x) => x.textContent.trim().startsWith(l)).click(), labelText);
+    return p.evaluate((id) => Boolean(document.getElementById(`a-${id}`)), row.id);
+  };
+  const inUnused = await filterShows("Unused");
+  const inPublished = await filterShows("Published");
+  await filterShows("All");
+  t.rec("Filters separate unused, draft and published files", inUnused === true && inPublished === false);
 
   // Preview: a draft using the library image renders it through next/image (token), visitors unaffected.
   if (!(await q("select 1 from public.content_drafts where key='contact'")).length) {
@@ -212,8 +242,14 @@ try {
     t.rec("Privacy approval needs the checklist ticked and is recorded with the admin's id", approveDisabled === true && approved?.by === adminId);
     // In use by a draft → the UI cannot delete it
     await p.goto(SITE + "/admin/media", { waitUntil: "load" });
+    await p.waitForFunction((id) => { const el = document.getElementById(`a-${id}`); return el && Object.keys(el).some((k) => k.startsWith("__react")); }, { timeout: 60000 }, row.id);
     const delDisabled = await p.evaluate((id) => [...document.getElementById(`a-${id}`).closest("li").querySelectorAll("button")].find((x) => x.textContent.trim() === "Delete")?.disabled, row.id);
-    t.rec("A file used by a draft shows where it is used and cannot be deleted", delDisabled === true);
+    const inDraft = await cardInfo(row.id);
+    t.rec("A file used by a draft shows where it is used (linked to the Contact editor, marked draft) and cannot be deleted",
+      delDisabled === true && inDraft.usage === "draft" && inDraft.review === "approved" && inDraft.refs.length === 1 && inDraft.refs[0].startsWith("/admin/content/contact|") && /\(draft\)/.test(inDraft.refs[0]), JSON.stringify(inDraft.refs));
+    const visitorApproved = (await fetch(SITE + sitePath)).status;
+    t.rec("Approving a file does not publish it: published content unchanged, visitors still get 404 while only a draft uses it",
+      JSON.stringify(await q("select version, content_hash from public.content_published where key='contact'")) === JSON.stringify(pubBefore) && visitorApproved === 404, `visitor ${visitorApproved}`);
     // (the preview iframe closes with its page)
     await p.goto(SITE + "/admin/preview", { waitUntil: "load" });
     if (await p.$("form[action='/admin/preview/exit'] button")) await Promise.all([p.waitForNavigation({ waitUntil: "load" }), p.click("form[action='/admin/preview/exit'] button")]);

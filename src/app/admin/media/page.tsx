@@ -2,10 +2,14 @@ import { requireAdminPage } from "@/lib/admin/auth";
 import { createClient } from "@/lib/supabase/server";
 import { mediaUsage } from "@/lib/admin/media-data";
 import { mediaUrl, mediaViewUrl } from "@/lib/media/paths";
-import { previewToken } from "@/lib/media/server";
+import { MEDIA_BUCKET, previewToken } from "@/lib/media/server";
 import { MediaLibrary, type MediaItem } from "@/components/admin/media/MediaLibrary";
 
 export const dynamic = "force-dynamic";
+
+/** Dates are formatted on the server (fixed locale and time zone), so the page renders identically on the client. */
+const fmtDate = (iso: string) =>
+  new Date(iso).toLocaleString("en-GB", { day: "numeric", month: "short", year: "numeric", hour: "2-digit", minute: "2-digit", timeZone: "Asia/Kolkata" }) + " IST";
 
 /** Images and PDFs used by the site's content, stored in the private site-media bucket. */
 export default async function MediaPage() {
@@ -27,6 +31,9 @@ export default async function MediaPage() {
     title: m.title,
     alt: m.alt,
     updatedAt: m.updated_at,
+    storagePath: m.path,
+    uploaded: fmtDate(m.created_at),
+    changed: m.updated_at && Date.parse(m.updated_at) - Date.parse(m.created_at) > 60_000 ? fmtDate(m.updated_at) : null,
     usedBy: usage.get(m.id) ?? [],
     approved: m.privacy_review === "approved",
   }));
@@ -40,7 +47,7 @@ export default async function MediaPage() {
       <p className="mt-2 max-w-2xl text-xs text-fg-subtle">
         Photo location and camera data are removed on upload. Nothing is blurred automatically: every file starts as “review pending” and is never shown publicly until you approve it after checking for signatures, enrolment or roll numbers, certificate codes, dates of birth and other personal IDs. Blur or replace a file first if needed.
       </p>
-      {error ? <p role="alert" className="mt-6 text-sm text-negative">The library could not be loaded. Please refresh.</p> : <MediaLibrary items={items} />}
+      {error ? <p role="alert" className="mt-6 text-sm text-negative">The library could not be loaded. Please refresh.</p> : <MediaLibrary items={items} bucket={MEDIA_BUCKET} />}
     </div>
   );
 }
