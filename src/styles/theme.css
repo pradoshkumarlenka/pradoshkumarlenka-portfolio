@@ -1,0 +1,69 @@
+/* =============================================================================
+   THEME — the one and only (permanent dark) theme for the site.
+
+   Change the look of the whole site here. Components never hard-code colours,
+   fonts, radii or shadows; they use these tokens through Tailwind utilities:
+
+     --color-canvas      →  bg-canvas, text-canvas, border-canvas …
+     --color-fg-muted    →  text-fg-muted …
+     --radius-card       →  rounded-card
+     --shadow-card       →  shadow-card
+     --ease-premium      →  ease-premium
+
+   There is intentionally NO light theme and NO theme switcher.
+   ============================================================================= */
+
+@theme {
+  /* --- Surfaces ----------------------------------------------------------- */
+  --color-canvas: #070a14;        /* page background */
+  --color-canvas-2: #111426;      /* secondary background (alternating bands) */
+  --color-surface: #15192b;       /* elevated surfaces: cards, menus */
+  --color-surface-2: #1b2036;     /* hovered / pressed surfaces */
+
+  /* --- Brand -------------------------------------------------------------- */
+  --color-violet: #a56bff;        /* primary accent (5.7:1 on canvas) */
+  --color-lavender: #d5c4ff;      /* soft accent, highlighted words */
+  --color-on-violet: #070a14;     /* text placed on violet fills */
+
+  /* --- Text --------------------------------------------------------------- */
+  --color-fg: #f4f2ff;            /* main text (18:1 on canvas) */
+  --color-fg-muted: #a7adc4;      /* secondary text (8.9:1 on canvas) */
+  --color-fg-subtle: #7c829b;     /* captions, meta (5.2:1 on canvas, AA) */
+
+  /* --- Lines -------------------------------------------------------------- */
+  --color-line: rgb(167 173 196 / 0.14);         /* default hairline border */
+  --color-line-strong: rgb(213 196 255 / 0.26);  /* hover / emphasised border */
+
+  /* --- Semantic (charts, status) ------------------------------------------ */
+  --color-positive: #5fcf9f;      /* gains, "available" status dot */
+  --color-negative: #f07a86;      /* losses, stress shading */
+
+  /* --- Typography (font files are loaded in src/app/fonts.ts) -------------- */
+  --font-sans: var(--font-body), ui-sans-serif, system-ui, sans-serif;
+  --font-display: var(--font-heading), ui-serif, Georgia, serif;
+  --font-mono: var(--font-numeric), ui-monospace, SFMono-Regular, monospace;
+
+  /* --- Shape -------------------------------------------------------------- */
+  --radius-chip: 999px;
+  --radius-control: 10px;
+  --radius-card: 16px;
+  --radius-panel: 24px;
+
+  /* --- Depth: realistic, low-glow shadows --------------------------------- */
+  --shadow-card: inset 0 1px 0 rgb(255 255 255 / 0.04), 0 18px 40px -24px rgb(0 0 0 / 0.75);
+  --shadow-raised: inset 0 1px 0 rgb(255 255 255 / 0.05), 0 28px 60px -28px rgb(0 0 0 / 0.85);
+
+  /* --- Motion: one easing everywhere, 400–900 ms -------------------------- */
+  --ease-premium: cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+/* Non-utility tokens (read by components and scripts via var()). */
+:root {
+  --nav-height: 64px;
+  --container-max: 1200px;
+  --gutter: clamp(16px, 4vw, 40px);
+
+  --duration-fast: 400ms;
+  --duration-base: 650ms;
+  --duration-slow: 900ms;
+}

@@ -1,0 +1,386 @@
+@import "tailwindcss";
+@import "../styles/theme.css";
+
+/* ---------------------------------------------------------------------------
+   Base layer. Everything visual comes from tokens in src/styles/theme.css.
+   --------------------------------------------------------------------------- */
+@layer base {
+  html {
+    color-scheme: dark;
+    background-color: var(--color-canvas);
+    -webkit-text-size-adjust: 100%;
+  }
+
+  body {
+    min-height: 100dvh;
+    /* Transparent so the fixed cosmic background (z-index -10) shows through.
+       The solid fallback colour is on <html>. */
+    background: transparent;
+    color: var(--color-fg);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+    overflow-x: clip; /* no sideways page scroll at 375px */
+  }
+
+  ::selection {
+    background-color: rgb(165 107 255 / 0.35);
+    color: var(--color-fg);
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--color-lavender);
+    outline-offset: 3px;
+    border-radius: 4px;
+  }
+
+  /* Anchored sections stop below the sticky navigation. */
+  section[id] {
+    scroll-margin-top: calc(var(--nav-height) + 16px);
+  }
+
+  /* Tabular numbers for every figure on a finance site. */
+  .tabular {
+    font-variant-numeric: tabular-nums lining-nums;
+  }
+}
+
+/* Lenis smooth-scroll helpers (equivalent to lenis/dist/lenis.css). */
+html.lenis,
+html.lenis body {
+  height: auto;
+}
+.lenis:not(.lenis-autoToggle).lenis-stopped {
+  overflow: clip;
+}
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+.lenis.lenis-smooth iframe {
+  pointer-events: none;
+}
+
+/* ---------------------------------------------------------------------------
+   Hero entrance (CSS only, so it starts with first paint; total < 1.6 s).
+   Each element sets its start time with style="--d: 300ms".
+   --------------------------------------------------------------------------- */
+@keyframes hero-rise {
+  from { opacity: 0; transform: translateY(14px); }
+  to { opacity: 1; transform: none; }
+}
+@keyframes mask-up {
+  from { transform: translateY(105%); }
+  to { transform: none; }
+}
+/* Halftone dot radius, animated so the real photo resolves from dots to clear. */
+@property --dot {
+  syntax: "<length>";
+  inherits: false;
+  initial-value: 10px;
+}
+@keyframes halftone-in {
+  from { --dot: 0.6px; filter: grayscale(1) contrast(1.25); }
+  to { --dot: 10px; filter: none; }
+}
+
+.hero-in {
+  animation: hero-rise 700ms var(--ease-premium) both;
+  animation-delay: var(--d, 0ms);
+}
+.mask-line {
+  display: block;
+  overflow: hidden;
+  padding-bottom: 0.08em; /* keep descenders inside the mask */
+}
+.mask-line > span {
+  display: block;
+  animation: mask-up 900ms var(--ease-premium) both;
+  animation-delay: var(--d, 0ms);
+}
+.portrait-dots-in {
+  /* 7px dot grid; at --dot ≥ 5px the dots overlap fully and the photo is untouched. */
+  -webkit-mask-image: radial-gradient(circle, #000 var(--dot), transparent calc(var(--dot) + 0.6px));
+  mask-image: radial-gradient(circle, #000 var(--dot), transparent calc(var(--dot) + 0.6px));
+  -webkit-mask-size: 7px 7px;
+  mask-size: 7px 7px;
+  animation: halftone-in 1500ms var(--ease-premium) both;
+  animation-delay: var(--d, 0ms);
+}
+
+/* Mouse + full-motion visitors get the interactive halftone print (React Bits),
+   which has its own intro; the photo underneath stays transparent (still in the
+   DOM for its alt text) unless WebGL2 is missing (data-halftone="off"). */
+@media (pointer: fine) and (prefers-reduced-motion: no-preference) {
+  .portrait-card:not([data-halftone="off"]) .portrait-dots-in {
+    opacity: 0;
+    animation: none;
+  }
+}
+
+/* Proof cards: cursor-following border light (mouse only) and lit dots. */
+.proof-card-light {
+  position: absolute;
+  inset: -1px;
+  border-radius: inherit;
+  padding: 1px;
+  pointer-events: none;
+  background: radial-gradient(170px circle at var(--mx, 50%) var(--my, 0%), rgb(213 196 255 / 0.7), transparent 70%);
+  -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  opacity: 0;
+  transition: opacity 300ms var(--ease-premium);
+}
+@media (hover: hover) and (pointer: fine) {
+  .proof-card:hover .proof-card-light { opacity: 1; }
+}
+.proof-dot { background: rgb(213 196 255 / calc(0.22 + 0.78 * var(--lit, 1))); }
+
+/* Word preview (mammoth HTML): readable document typography. */
+.docx-preview :is(h1, h2, h3, h4) { font-weight: 600; line-height: 1.25; margin: 1.4em 0 0.5em; }
+.docx-preview h1 { font-size: 1.6em; }
+.docx-preview h2 { font-size: 1.3em; }
+.docx-preview h3 { font-size: 1.12em; }
+.docx-preview p { margin: 0 0 0.85em; }
+.docx-preview :is(ul, ol) { margin: 0 0 0.85em 1.4em; }
+.docx-preview ul { list-style: disc; }
+.docx-preview ol { list-style: decimal; }
+.docx-preview table { width: 100%; border-collapse: collapse; margin: 1em 0; font-size: 0.92em; }
+.docx-preview :is(td, th) { border: 1px solid #c9c6d6; padding: 0.4em 0.6em; vertical-align: top; }
+.docx-preview img { max-width: 100%; height: auto; }
+.docx-preview a { color: #5b3cc4; text-decoration: underline; }
+
+/* WCAG 2.2 target size: small text links get a 24px-tall hit area without any visual or layout change. */
+.tap-target {
+  position: relative;
+}
+.tap-target::after {
+  content: "";
+  position: absolute;
+  inset: -4px 0;
+}
+
+/* Page transition (see PageTransition.tsx): plays after the new page rendered, click-through. */
+.page-wipe {
+  position: fixed;
+  inset: 0;
+  z-index: 70;
+  pointer-events: none;
+  animation: intro-gone 1ms linear 600ms both;
+}
+.page-wipe__veil {
+  position: absolute;
+  inset: 0;
+  background: var(--color-canvas);
+  animation: page-wipe-veil 550ms var(--ease-premium) both;
+}
+.page-wipe__line {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  width: 1px;
+  background: var(--color-violet);
+  box-shadow: 0 0 24px 2px rgb(165 107 255 / 0.45);
+  animation: page-wipe-line 550ms var(--ease-premium) both;
+}
+@keyframes page-wipe-veil {
+  from { clip-path: inset(0 0 0 0); opacity: 0.92; }
+  to { clip-path: inset(0 0 0 100%); opacity: 0.6; }
+}
+@keyframes page-wipe-line {
+  from { transform: translateX(0); opacity: 1; }
+  85% { opacity: 1; }
+  to { transform: translateX(100vw); opacity: 0; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .page-wipe { display: none; }
+}
+
+/* Intro loader (see IntroLoader.tsx): first visit only, ~1.1 s, click-through. */
+@counter-style intro-pad3 {
+  system: extends decimal;
+  pad: 3 "0";
+}
+@property --intro-n {
+  syntax: "<integer>";
+  inherits: false;
+  initial-value: 0;
+}
+.intro-loader {
+  position: fixed;
+  inset: 0;
+  z-index: 200;
+  pointer-events: none;
+  animation: intro-gone 1ms linear 1.15s both;
+}
+.intro-loader__panel {
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 50.5%;
+  background: var(--color-canvas);
+}
+.intro-loader__panel--top { top: 0; animation: intro-open-up 450ms var(--ease-premium) 0.7s both; }
+.intro-loader__panel--bottom { bottom: 0; animation: intro-open-down 450ms var(--ease-premium) 0.7s both; }
+.intro-loader__core {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  animation: intro-core-out 250ms ease 0.62s both;
+}
+.intro-loader__line {
+  width: min(220px, 50vw);
+  height: 1px;
+  background: var(--color-violet);
+  transform-origin: left;
+  animation: intro-line 420ms var(--ease-premium) both;
+}
+.intro-loader__mono {
+  font-family: var(--font-display);
+  font-size: 34px;
+  letter-spacing: 0.08em;
+  color: var(--color-fg);
+  animation: intro-fade 300ms ease 0.18s both;
+}
+.intro-loader__count {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.2em;
+  color: var(--color-fg-subtle);
+  counter-reset: intro var(--intro-n);
+  animation: intro-count 520ms linear 0.1s both;
+}
+.intro-loader__count::after { content: counter(intro, intro-pad3); }
+@keyframes intro-line { from { transform: scaleX(0); } to { transform: scaleX(1); } }
+@keyframes intro-fade { from { opacity: 0; } to { opacity: 1; } }
+@keyframes intro-count { from { --intro-n: 0; } to { --intro-n: 100; } }
+@keyframes intro-core-out { to { opacity: 0; } }
+@keyframes intro-open-up { to { transform: translateY(-101%); } }
+@keyframes intro-open-down { to { transform: translateY(101%); } }
+@keyframes intro-gone { to { visibility: hidden; } }
+html[data-intro="skip"] .intro-loader,
+html[data-intro="done"] .intro-loader {
+  display: none;
+}
+@media (prefers-reduced-motion: reduce) {
+  .intro-loader { display: none; }
+}
+
+/* Hero name (see HeroName.tsx): a text name in the HTML, enhanced by the TechText
+   canvases. The text appears 0.25 s after the first paint (instantly with reduced motion),
+   unless the canvas draw-in takes over first. Sized exactly like the canvas
+   (min(104px, 17.6% of the column) = the same formula as HeroName's measure). */
+.hero-name {
+  position: relative;
+  container-type: inline-size;
+}
+.hero-name-text {
+  font-size: min(104px, 17.6cqw);
+  /* Whole pixels, like the canvas (HeroName floors its size); older browsers keep the line above. */
+  font-size: min(104px, round(down, 17.6cqw, 1px));
+  line-height: 1.18;
+  letter-spacing: -0.01em;
+  color: var(--color-fg);
+  white-space: nowrap;
+  /* Optical match with the canvas glyph placement (measured: text sat 0.037em high, 0.008em right). */
+  transform: translate(-0.008em, 0.037em);
+  animation: hero-name-text-in 350ms var(--ease-premium) 0.25s both;
+}
+.hero-name-text > span {
+  display: block;
+}
+@keyframes hero-name-text-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+.hero-name-canvas {
+  position: absolute;
+  inset: 0 0 auto 0;
+  opacity: 0;
+}
+.hero-name:is([data-mode="intro"], [data-mode="painted"]) .hero-name-canvas {
+  opacity: 1;
+}
+.hero-name[data-mode="intro"] .hero-name-text {
+  animation: none;
+  opacity: 0;
+}
+.hero-name[data-mode="painted"] .hero-name-text {
+  animation: none;
+  visibility: hidden;
+}
+.hero-static .hero-name-text {
+  animation: none;
+}
+
+/* Hero already seen this page load (see HeroReplayGuard): no replay. */
+.hero-static :is(.hero-in, .mask-line > span, .portrait-dots-in) {
+  animation: none;
+}
+
+/* Reduced motion: show final states instantly. */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-delay: 0s !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+  /* Entrance effects off entirely: their resting styles are the final state. */
+  .hero-in,
+  .mask-line > span,
+  .portrait-dots-in {
+    animation: none !important;
+  }
+}
+
+/* Project & research pictures: one shared 3:2 frame (see ProjectImage.tsx). */
+@layer components {
+  .project-image-frame {
+    width: 100%;
+    aspect-ratio: 3 / 2;
+    position: relative;
+    overflow: hidden;
+    border-radius: inherit;
+    background: var(--color-canvas-2);
+  }
+  .project-image-frame img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    transition: scale 600ms var(--ease-premium);
+  }
+  @media (hover: hover) and (prefers-reduced-motion: no-preference) {
+    .group:hover .project-image-frame img,
+    .group:focus-visible .project-image-frame img { scale: 1.03; }
+  }
+}
+
+/* Featured research picture: gentle cursor tilt + soft light (ResearchVisual.tsx). */
+.research-visual-card {
+  transform: rotateX(var(--rx, 0deg)) rotateY(var(--ry, 0deg));
+  transition: transform 500ms var(--ease-premium);
+  will-change: transform;
+}
+.research-visual-light {
+  background: radial-gradient(240px circle at var(--mx, 50%) var(--my, 50%), rgb(213 196 255 / 0.16), transparent 70%);
+  opacity: 0;
+  transition: opacity 300ms var(--ease-premium);
+}
+@media (hover: hover) and (pointer: fine) and (prefers-reduced-motion: no-preference) {
+  .research-visual:hover .research-visual-light { opacity: 1; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .research-visual-card { transform: none; transition: none; }
+}
