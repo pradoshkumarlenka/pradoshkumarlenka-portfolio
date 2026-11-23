@@ -1,0 +1,50 @@
+node_modules/
+.next/
+out/
+build/
+*.tsbuildinfo
+next-env.d.ts
+# Secrets: every .env variant except a value-free example file
+.env
+.env.*
+.env*.local
+!.env.example
+*.pem
+*.key
+*.p12
+*.pfx
+.vercel
+.supabase/
+supabase/.temp/
+npm-debug.log*
+yarn-error.log*
+*.log
+.DS_Store
+Thumbs.db
+desktop.ini
+public/vendor/
+# Local tooling / one-off scripts
+.claude/
+scripts/.beyond-tmp.mjs
+*.bak
+*.dump
+*.sql.gz
+
+# Original certificate files (may contain private codes) — never published
+certificates-src/
+# your original documents (mark sheets, letters with private details) — never published
+Pradosh_Portfolio_Assets/
+
+# Local database backups (contain the admin email) — never published
+backups/
+
+# Raw source material (originals, edits, design references) — the site uses the
+# processed copies in /public. Remove a line here only if you want it in the repository.
+Pradosh_Beyond_Classroom_Assets/
+Pradosh_Introduction_video/
+Pradosh_Portfolio_Visuals/
+png-ready/
+svg-editable/
+design-reference/
+image.png
+Pradosh_Website_Blueprint_for_AI*.md
