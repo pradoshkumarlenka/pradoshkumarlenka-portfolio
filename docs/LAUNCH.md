@@ -77,10 +77,15 @@ redirect URL (Supabase) to the domain, and **redeploy**.
 
 - **Check:** home page, a case study, résumé download, certificate verify links, `/sitemap.xml`,
   `/robots.txt`, and the link preview (paste the URL into LinkedIn's Post Inspector).
-- **Free-plan pause:** Supabase pauses free projects after a period of inactivity. The site stays up
-  (content falls back to the bundled files), but Research & Selected Work shows its outage notice
-  and the admin is unavailable until you press **Restore** in Supabase. A paid plan, or regular
-  visits/edits, avoid this.
+- **Free-plan pause:** Supabase pauses free projects after **1 week of inactivity** (supabase.com/pricing).
+  To prevent this, `vercel.json` schedules a **daily Vercel Cron** call to `/healthz` (03:23 UTC ± 59 min,
+  the Hobby limit is once a day), which reads published content once with the public visitor key.
+  It runs on Vercel, so it keeps working without any commits or visits; GitHub scheduled workflows were
+  not used because GitHub disables them after 60 days without repository activity.
+  If the project is paused anyway, the site stays up (content falls back to the bundled files), but
+  Research & Selected Work shows its outage notice and the admin is unavailable until you press
+  **Restore** in Supabase (one click, possible for up to 1 year after pausing; after that only a backup
+  download remains). Check the cron under Vercel → Project → Settings → Cron Jobs.
 - **Backups:** `npm run cms:backup` (local, needs `SUPABASE_DB_URL`) and, in the admin, *Site content →
   Download all content (JSON backup)*. Do this before big edits.
 - **Admin sessions:** use the admin in the tab where you signed in. Other tabs show "Admin locked in
@@ -132,7 +137,8 @@ load the analytics script at all (no failed requests, no console errors).
 - **Health check:** `https://<site>/healthz` → `{"status":"ok","database":"ok"}`. Add it to a free
   uptime monitor (e.g. UptimeRobot, every 5–15 min). `"database":"unreachable"` means Supabase is
   paused or down: the site keeps working from its bundled content; restore the project in Supabase.
-  Regular checks also help keep a free Supabase project from pausing.
+  Regular checks also help keep a free Supabase project from pausing (the daily Vercel Cron above does
+  this already; an external monitor adds e-mail alerts when the site or database is down).
 - **Errors:** Vercel → Project → **Logs** (runtime errors, with the digest shown to visitors' error page).
   No paid error-tracking service is needed for a portfolio.
 - **Deployment check:** after each deploy open `/`, one case study, `/healthz`, `/sitemap.xml`, and sign
